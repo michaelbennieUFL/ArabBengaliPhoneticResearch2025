@@ -91,7 +91,7 @@ def generateDevoicedTests(word_set) -> dict:
 
 def generateTestWordList(word_set):
     result_sets = {
-        # "devoicedPlosives": generateDevoicedTests(word_set),
+        "devoicedPlosives": generateDevoicedTests(word_set),
         "unaspiratedUnvoicedPlosiveInitials": generateUnvoicedAfterSTests(word_set),
         "plosiveInitials": generatePlosiveInitalTests(word_set),
         "plosiveFinals": generatePlosiveFinalsTests(word_set),
@@ -112,10 +112,10 @@ def generateTestWordList(word_set):
     for plosive, words in result_sets["unaspiratedUnvoicedPlosiveInitials"].items():
         print(f"{plosive}: {len(words)} words")
 
-    # # Print the results for Devoiced Plosives
-    # print("\nDevoiced Plosive Tests:")
-    # for plosive, words in result_sets["devoicedPlosives"].items():
-    #     print(f"{plosive}: {len(words)} words")
+    # Print the results for Devoiced Plosives
+    print("\nDevoiced Plosive Tests:")
+    for plosive, words in result_sets["devoicedPlosives"].items():
+        print(f"{plosive}: {len(words)} words")
 
 
     return result_sets
