@@ -41,7 +41,6 @@ def generatePlosiveInitalTests(word_set) -> dict:
     for plosive in wordCategoryList["Consonants_Stops"]:
         plosive_initals = CMUreader.filterByLetters(word_set, [plosive])
         plosive_initals = CMUreader.filterByPhonemeCount(plosive_initals, 3, int.__eq__)
-        plosive_initals = CMUreader.removeDuplicatePronunciations(plosive_initals)
         plosive_initals = CMUreader.filterByLetters(plosive_initals, wordCategoryList["Consonants_All"], index=-1)
         plosive_initals = CMUreader.filterByLetters(plosive_initals, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
         plosive_initals = CMUreader.filterBySyllableCount(plosive_initals, 1, int.__eq__)
@@ -56,7 +55,6 @@ def generatePlosiveFinalsTests(word_set) -> dict:
     for plosive in wordCategoryList["Consonants_Stops"]:
         plosive_finals = CMUreader.filterByLetters(word_set, [plosive], index=-1)
         plosive_finals = CMUreader.filterByPhonemeCount(plosive_finals, 3, int.__eq__)
-        plosive_finals = CMUreader.removeDuplicatePronunciations(plosive_finals)
         plosive_finals = CMUreader.filterByLetters(plosive_finals, wordCategoryList["Consonants_All"], index=0)
         plosive_finals = CMUreader.filterByLetters(plosive_finals, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
         plosive_finals = CMUreader.filterBySyllableCount(plosive_finals, 1, int.__eq__)
@@ -72,7 +70,6 @@ def generateUnvoicedAfterSTests(word_set) -> dict:
     for plosive in wordCategoryList["Consonants_Stops_Unvoiced"]:
         unvoiced_plosives_after_s = CMUreader.filterByLetters(word_set, wordCategoryList["Consonants_S"], index=0)
         unvoiced_plosives_after_s = CMUreader.filterByPhonemeCount(unvoiced_plosives_after_s, 4, int.__eq__)
-        unvoiced_plosives_after_s = CMUreader.removeDuplicatePronunciations(unvoiced_plosives_after_s)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, [plosive], index=1)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, wordCategoryList["Consonants_All"], index=-1)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
@@ -95,7 +92,6 @@ def generateDevoicedTests(word_set) -> dict:
 
         devoiced_plosives = CMUreader.filterBySyllableCount(word_set, 2, int.__eq__)
 
-        devoiced_plosives = CMUreader.removeDuplicatePronunciations(devoiced_plosives)
 
 
 
