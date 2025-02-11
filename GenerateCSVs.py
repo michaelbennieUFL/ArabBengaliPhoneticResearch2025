@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import csv
+import os
+
 from TestVocabMaker import generateTestWordList  # your module containing generateTestWordList
 from NgramAPI import getFrequency  # your module containing getFrequency
 import CMUreader  # assuming this module provides parse_cmudict
@@ -18,10 +20,15 @@ def generateCSVFiles(word_set):
     by Frequency (descending).
     """
     test_results = generateTestWordList(word_set)
+    frequency_cache = {}  # Dictionary to store previously fetched frequencies
+
+    # Ensure output directory exists
+    output_dir = "out"
+    os.makedirs(output_dir, exist_ok=True)
 
     # Iterate over each test type (the keys of test_results)
     for test_type, test_dict in test_results.items():
-        csv_filename = f"out/{test_type}.csv"
+        csv_filename = os.path.join(output_dir, f"{test_type}.csv")
         with open(csv_filename, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
             # Write header row
@@ -33,13 +40,18 @@ def generateCSVFiles(word_set):
                 # Each entry in test_dict[phoneme] is a word dictionary
                 for word_dict in test_dict[phoneme]:
                     word_text = word_dict["word"]
-                    # Join the list of phonemes to form the ARPAbet transcription
                     transcription = " ".join(word_dict["pronunciation"])
-                    try:
-                        frequency = getFrequency(word_text)
-                    except Exception as e:
-                        # If the API call fails, assign frequency as 0.0
-                        frequency = 0.0
+
+                    # Check if word's frequency is already cached
+                    if word_text in frequency_cache:
+                        frequency = frequency_cache[word_text]
+                    else:
+                        try:
+                            frequency = getFrequency(word_text)  # External API call
+                        except Exception:
+                            frequency = 0.0  # Default frequency if API call fails
+                        frequency_cache[word_text] = frequency  # Cache the result
+
                     rows.append((phoneme, word_text, frequency, transcription))
 
                 # Sort the rows for this phoneme by Frequency in descending order
