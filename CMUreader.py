@@ -124,6 +124,40 @@ def filterBySyllableCount(word_list: List[Dict[str, List[str]]], count:int, oper
     return new_word_list
 
 
+def countPhonemes(word: Dict[str, List[str]]) -> int:
+    return len(word['pronunciation'])
+
+def filterByPhonemeCount(word_list: List[Dict[str, List[str]]], count: int, operator=int.__eq__) -> List[Dict[str, List[str]]]:
+    new_word_list = []
+    for word in word_list:
+        if operator(countPhonemes(word), count):
+            new_word_list.append(word)
+    return new_word_list
+
+def removeDuplicatePronunciations(word_list: List[Dict[str, List[str]]]) -> List[Dict[str, List[str]]]:
+    """
+    Removes words that share the same pronunciation, keeping only those with unique pronunciations.
+
+    Args:
+        word_list (List[Dict[str, List[str]]]): A list of dictionaries where each dictionary contains:
+            - 'word': The word as a string.
+            - 'pronunciation': A list of phonemes representing its pronunciation.
+
+    Returns:
+        List[Dict[str, List[str]]]: A filtered list containing only words with unique pronunciations.
+    """
+    pronunciation_map = {}
+    unique_words = []
+
+    for word_entry in word_list:
+        pronunciation_tuple = tuple(word_entry["pronunciation"])  # Convert list to tuple for hashing
+        if pronunciation_tuple not in pronunciation_map:
+            pronunciation_map[pronunciation_tuple] = word_entry  # Store the first occurrence
+
+    unique_words = list(pronunciation_map.values())  # Extract unique word entries
+
+    return unique_words
+
 # Example usage:
 if __name__ == "__main__":
     cmudict_path = 'cmudict-0.7b'  # Replace with your actual file path
