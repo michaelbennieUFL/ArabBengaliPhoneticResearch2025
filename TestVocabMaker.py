@@ -1,4 +1,8 @@
 import CMUreader
+from tabulate import tabulate
+
+#TODO:
+# talk aboout AO sound
 
 def generateWordCategoryLists():
     category_dict = {
@@ -11,7 +15,7 @@ def generateWordCategoryLists():
         "Consonants_Stops_Unvoiced": ["P", "T", "K"],
         "Consonants_S": ["S"],
         "Vowels_Monophthong": ["AA", "AE", "AH", "AO", "AX", "AXR", "EH", "ER", "IH", "IX", "IY", "UH", "UW", "UX"],
-        "Vowels_Uncentralized_NonMid": ["AA", "AE", "AW", "AY", "EY", "IH", "IY", "OW", "OY", "UH", "UW"]
+        "Vowels_Uncentralized_NonMid": ["AA", "IY","EH","UW","UH"]
     }
 
     category_dict["Vowels_Monophthong_Uncentralized_NonMid"] = list(
@@ -36,6 +40,8 @@ def generatePlosiveInitalTests(word_set) -> dict:
 
     for plosive in wordCategoryList["Consonants_Stops"]:
         plosive_initals = CMUreader.filterByLetters(word_set, [plosive])
+        plosive_initals = CMUreader.filterByPhonemeCount(plosive_initals, 3, int.__eq__)
+        plosive_initals = CMUreader.removeDuplicatePronunciations(plosive_initals)
         plosive_initals = CMUreader.filterByLetters(plosive_initals, wordCategoryList["Consonants_All"], index=-1)
         plosive_initals = CMUreader.filterByLetters(plosive_initals, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
         plosive_initals = CMUreader.filterBySyllableCount(plosive_initals, 1, int.__eq__)
@@ -49,6 +55,8 @@ def generatePlosiveFinalsTests(word_set) -> dict:
 
     for plosive in wordCategoryList["Consonants_Stops"]:
         plosive_finals = CMUreader.filterByLetters(word_set, [plosive], index=-1)
+        plosive_finals = CMUreader.filterByPhonemeCount(plosive_finals, 3, int.__eq__)
+        plosive_finals = CMUreader.removeDuplicatePronunciations(plosive_finals)
         plosive_finals = CMUreader.filterByLetters(plosive_finals, wordCategoryList["Consonants_All"], index=0)
         plosive_finals = CMUreader.filterByLetters(plosive_finals, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
         plosive_finals = CMUreader.filterBySyllableCount(plosive_finals, 1, int.__eq__)
@@ -63,6 +71,8 @@ def generateUnvoicedAfterSTests(word_set) -> dict:
 
     for plosive in wordCategoryList["Consonants_Stops_Unvoiced"]:
         unvoiced_plosives_after_s = CMUreader.filterByLetters(word_set, wordCategoryList["Consonants_S"], index=0)
+        unvoiced_plosives_after_s = CMUreader.filterByPhonemeCount(unvoiced_plosives_after_s, 4, int.__eq__)
+        unvoiced_plosives_after_s = CMUreader.removeDuplicatePronunciations(unvoiced_plosives_after_s)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, [plosive], index=1)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, wordCategoryList["Consonants_All"], index=-1)
         unvoiced_plosives_after_s = CMUreader.filterByLetters(unvoiced_plosives_after_s, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"], index=-2)
@@ -84,10 +94,43 @@ def generateDevoicedTests(word_set) -> dict:
     for plosive in wordCategoryList["Consonants_Stops_Voiced"]:
 
         devoiced_plosives = CMUreader.filterBySyllableCount(word_set, 2, int.__eq__)
+
+        devoiced_plosives = CMUreader.removeDuplicatePronunciations(devoiced_plosives)
+
+
+
+        devoiced_plosives = CMUreader.filterByLetterPair(devoiced_plosives,wordCategoryList["Consonants_All"], wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"])
+        devoiced_plosives = CMUreader.filterByLetterPair(devoiced_plosives, wordCategoryList["Vowels_Monophthong_Uncentralized_NonMid"],[plosive])
         devoiced_plosives=CMUreader.filterByLetterPair(devoiced_plosives,[plosive],unvoiced_non_plosives)
         all_devoiced_plosives[plosive] = devoiced_plosives
 
     return all_devoiced_plosives
+
+
+def generate_markdown_table(test_word_list):
+    # Define test types and map them to the dataset
+    test_types = [
+        ("Plosive Initial", test_word_list["plosiveInitials"]),
+        ("Plosive Final", test_word_list["plosiveFinals"]),
+        ("Unaspirated Unvoiced Plosive", test_word_list["unaspiratedUnvoicedPlosiveInitials"]),
+        ("Devoiced Plosive", test_word_list["devoicedPlosives"]),
+    ]
+
+    # Phonemes to include as columns
+    phonemes = ["P", "T", "K", "B", "D", "G"]
+
+    # Prepare table data
+    table_data = []
+    for test_name, data in test_types:
+        row = [test_name]  # First column is the test type
+        for ph in phonemes:
+            row.append(len(data.get(ph, [])) if ph in data else "-")  # Get word count or "-"
+        table_data.append(row)
+
+    # Generate Markdown table
+    markdown_table = tabulate(table_data, headers=["Test Set Type \\ Phoneme"] + phonemes, tablefmt="github")
+    print(markdown_table)  # Print to console
+    return markdown_table  # Return as a string if needed elsewhere
 
 def generateTestWordList(word_set):
     result_sets = {
@@ -117,6 +160,7 @@ def generateTestWordList(word_set):
     for plosive, words in result_sets["devoicedPlosives"].items():
         print(f"{plosive}: {len(words)} words")
 
+    generate_markdown_table(result_sets)
 
     return result_sets
 
