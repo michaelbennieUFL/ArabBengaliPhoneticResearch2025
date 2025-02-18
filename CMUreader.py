@@ -2,6 +2,8 @@ from typing import List
 import re
 from typing import List, Dict
 
+def clean_string(text):
+    return re.sub(r'[^a-zA-Z]', '', text)
 
 def parse_cmudict(file_path, include_non_letter_symbols=False):
     """
@@ -40,6 +42,7 @@ def parse_cmudict(file_path, include_non_letter_symbols=False):
                     'pronunciation': pronunciation
                 })
             elif include_non_letter_symbols:
+                word=clean_string(word)
                 entries.append({
                     'word': word,
                     'pronunciation': pronunciation

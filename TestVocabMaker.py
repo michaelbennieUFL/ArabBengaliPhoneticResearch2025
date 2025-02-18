@@ -14,7 +14,14 @@ def generateWordCategoryLists():
         ],
         "Consonants_Stops_Unvoiced": ["P", "T", "K"],
         "Consonants_S": ["S"],
-        "Vowels_Monophthong": ["AA", "AE", "AH", "AO", "AX", "AXR", "EH", "ER", "IH", "IX", "IY", "UH", "UW", "UX"],
+        "Vowels_All": [
+            "AA", "AE", "AH", "AO", "AX", "AXR", "AW", "AY",
+            "EH", "ER", "EY", "IH", "IX", "IY", "OW", "OY",
+            "UH", "UW", "UX"
+        ],
+        "Vowels_Monophthong": [
+            "AA", "AE", "AH", "AO", "AX","AXR", "EH", "ER",
+            "IH", "IX", "IY", "UH", "UW", "UX"],
         "Vowels_Uncentralized_NonMid": ["AA", "IY","EH","UW","UH"]
     }
 
@@ -103,11 +110,27 @@ def generateDevoicedTests(word_set) -> dict:
     return all_devoiced_plosives
 
 
+def generateVCVPlosiveTests(word_set) -> dict:
+    wordCategoryList = generateWordCategoryLists()
+    all_plosive_middles = {}
+
+    for plosive in wordCategoryList["Consonants_Stops"]:
+        plosive_middle = CMUreader.filterByPhonemeCount(word_set, 3, int.__eq__)
+        plosive_middle = CMUreader.filterByLetters(plosive_middle, [plosive], index=1)
+        plosive_middle = CMUreader.filterByLetters(plosive_middle, wordCategoryList["Vowels_All"], index=0)
+        plosive_middle = CMUreader.filterByLetters(plosive_middle, wordCategoryList["Vowels_All"], index=-1)
+        #plosive_middle = CMUreader.filterBySyllableCount(plosive_middle, 1, int.__eq__)
+        all_plosive_middles[plosive] = plosive_middle
+
+    return all_plosive_middles
+
+
 def generate_markdown_table(test_word_list):
     # Define test types and map them to the dataset
     test_types = [
         ("Plosive Initial", test_word_list["plosiveInitials"]),
         ("Plosive Final", test_word_list["plosiveFinals"]),
+        ("VCV Plosive",test_word_list["VCVplosive"]),
         ("Unaspirated Unvoiced Plosive", test_word_list["unaspiratedUnvoicedPlosiveInitials"]),
         ("Devoiced Plosive", test_word_list["devoicedPlosives"]),
     ]
@@ -130,6 +153,7 @@ def generate_markdown_table(test_word_list):
 
 def generateTestWordList(word_set):
     result_sets = {
+        "VCVplosive": generateVCVPlosiveTests(word_set),
         "devoicedPlosives": generateDevoicedTests(word_set),
         "unaspiratedUnvoicedPlosiveInitials": generateUnvoicedAfterSTests(word_set),
         "plosiveInitials": generatePlosiveInitalTests(word_set),
@@ -155,6 +179,12 @@ def generateTestWordList(word_set):
     print("\nDevoiced Plosive Tests:")
     for plosive, words in result_sets["devoicedPlosives"].items():
         print(f"{plosive}: {len(words)} words")
+
+    # Print the results for Devoiced Plosives
+    print("\nVCV Plosive Tests:")
+    for plosive, words in result_sets["VCVplosive"].items():
+        print(f"{plosive}: {len(words)} words")
+
 
     generate_markdown_table(result_sets)
 
