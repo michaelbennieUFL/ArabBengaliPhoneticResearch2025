@@ -225,7 +225,7 @@ class FilterTestStimuli:
         # Measure time for Simulated Annealing
         start_time_sa = time.time()
         best_solution, best_score = self.simulated_annealing(candidate_generators,
-                                                             iterations=iterations*100,
+                                                             iterations=iterations*1000,
                                                              calc_distance_fn=self.calculate_average_distance_between_items)
         end_time_sa = time.time()
         sa_time = end_time_sa - start_time_sa
@@ -341,7 +341,8 @@ class FilterTestStimuli:
         print(md_table)
 
 
-if __name__ == "__main__":
+def process_plosive_initials():
+    """Processes Plosive Initials"""
     print("\n🚀 Starting Plosive Initials Processing...")
 
     filterer = FilterTestStimuli("out/plosiveInitials.csv")
@@ -361,7 +362,9 @@ if __name__ == "__main__":
     filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveInitalToTestedAllophoneTable)
     print(f"✅ Plosive Initials saved to {output_file}\n")
 
-    # ---------------Plosive Finals-----------#
+
+def process_plosive_finals():
+    """Processes Plosive Finals"""
     print("\n🚀 Starting Plosive Finals Processing...")
 
     filterer = FilterTestStimuli("out/plosiveFinals.csv")
@@ -381,7 +384,9 @@ if __name__ == "__main__":
     filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveFinalToTestedAllophoneTable)
     print(f"✅ Plosive Finals saved to {output_file}\n")
 
-    # ---------------Devoiced Plosive Finals-----------#
+
+def process_devoiced_plosive_finals():
+    """Processes Devoiced Plosive Finals"""
     print("\n🚀 Starting Devoiced Plosive Finals Processing...")
 
     filterer = FilterTestStimuli("out/devoicedPlosives.csv")
@@ -398,15 +403,16 @@ if __name__ == "__main__":
     filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveDevoicedToTestedAllophoneTable)
     print(f"✅ Devoiced Plosive Finals saved to {output_file}\n")
 
-    # ---------------VCV Plosive Finals-----------#
+
+def process_vcv_plosive_finals():
+    """Processes VCV Plosive Finals"""
     print("\n🚀 Starting VCV Plosive Finals Processing...")
 
     filterer = FilterTestStimuli("out/VCVplosive.csv")
     print("🔍 Selecting best stimuli for VCV Plosive Finals...")
     best_solution = filterer.select_stimuli(n=5)
 
-
-    apaPlosiveInitalToTestedAllophoneTable = {
+    apaPlosiveVCVToTestedAllophoneTable = {
         "P": "VCV_[pʰ]",
         "T": "VCV_[tʰ]",
         "K": "VCV_[kʰ]",
@@ -416,25 +422,38 @@ if __name__ == "__main__":
     }
 
     output_file = "final/vcvPlosiveFinals.csv"
-    filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveInitalToTestedAllophoneTable)
+    filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveVCVToTestedAllophoneTable)
     print(f"✅ VCV Plosive Finals saved to {output_file}\n")
 
-    # ---------------Unaspirated Unvoiced Finals-----------#
+
+def process_unaspirated_unvoiced_plosive_initials():
+    """Processes Unaspirated Unvoiced Plosive Initials"""
     print("\n🚀 Starting Unaspirated Unvoiced Finals Processing...")
 
     filterer = FilterTestStimuli("out/unaspiratedUnvoicedPlosiveInitials.csv")
     print("🔍 Selecting best stimuli for Unaspirated Unvoiced Plosive Initials...")
     best_solution = filterer.select_stimuli(n=15)
 
-    apaPlosiveunaspiratedUnvoicedToTestedAllophoneTable = {
+    apaPlosiveUnaspiratedUnvoicedToTestedAllophoneTable = {
         "P": "[p]",
         "T": "[t]",
         "K": "[k]",
     }
 
     output_file = "final/unaspiratedUnvoicedPlosiveInitials.csv"
-    filterer.save_solution_to_csv_and_print_table(best_solution, output_file,
-                                                  apaPlosiveunaspiratedUnvoicedToTestedAllophoneTable)
+    filterer.save_solution_to_csv_and_print_table(best_solution, output_file, apaPlosiveUnaspiratedUnvoicedToTestedAllophoneTable)
     print(f"✅ Unaspirated Unvoiced Plosive Initials saved to {output_file}\n")
 
+
+def main():
+    """Main function to execute all processing steps"""
+    #process_plosive_initials()
+    process_plosive_finals()
+    #process_devoiced_plosive_finals()
+    process_vcv_plosive_finals()
+    #process_unaspirated_unvoiced_plosive_initials()
     print("\n🎉 All processing complete!")
+
+
+if __name__ == "__main__":
+    main()
