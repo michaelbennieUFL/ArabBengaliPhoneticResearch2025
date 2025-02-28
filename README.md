@@ -50,14 +50,14 @@ Each dataset contains a markdown table summarizing:
 ---
 
 ### **Plosive Finals**
-| Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
-|-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
-| [b̚]           | B             | 13.78                        | 26.70                      | 38.20          | 6.33         |
-| [d̚]           | D             | 20.88                        | 18.84                      | 45.13          | 10.09        |
-| [g̚]           | G             | 6.25                         | 8.68                       | 38.73          | 4.17         |
-| [k̚]           | K             | 19.51                        | 27.19                      | 43.87          | 10.78        |
-| [p̚]           | P             | 19.41                        | 33.69                      | 43.93          | 8.35         |
-| [t̚]           | T             | 33.56                        | 19.10                      | 50.60          | 6.41         |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *1Million |   S.D. Probability *1Million |   Average Density |   S.D. Density |
+|--------------------|------------------|---------------------------------|------------------------------|-------------------|----------------|
+| [b̚]                | B                |                           13.71 |                        26.73 |             38.53 |           6.27 |
+| [d̚]                | D                |                           21.41 |                        18.87 |             44.93 |           9.98 |
+| [g̚]                | G                |                            6.29 |                         8.65 |             38.33 |           4.41 |
+| [k̚]                | K                |                           20.16 |                        27.01 |             43.73 |           9.94 |
+| [p̚]                | P                |                           20.14 |                        32.89 |             43.73 |           8.83 |
+| [t̚]                | T                |                           31.88 |                        16.68 |             48.07 |           9.92 |
 
 ✅ **File Saved**: `final/plosiveFinals.csv`
 
@@ -76,15 +76,14 @@ Each dataset contains a markdown table summarizing:
 ---
 
 ### **VCV Plosive Finals**
-| Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
-|-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
-| VCV_[b]        | B             | 3.79                         | 3.73                       | 22.80          | 9.87         |
-| VCV_[d]        | D             | 3.22                         | 1.90                       | 22.80          | 9.93         |
-| VCV_[g]        | G             | 3.89                         | 4.30                       | 22.80          | 9.74         |
-| VCV_[kʰ]      | K             | 3.78                         | 4.58                       | 22.80          | 9.26         |
-| VCV_[pʰ]      | P             | 5.46                         | 4.89                       | 22.20          | 5.71         |
-| VCV_[tʰ]      | T             | 3.72                         | 4.98                       | 22.80          | 9.81         |
-
+| Tested Allophone   | Tested Phoneme   |   Average Probability *1Million |   S.D. Probability *1Million |   Average Density |   S.D. Density |
+|--------------------|------------------|---------------------------------|------------------------------|-------------------|----------------|
+| VCV_[b]            | B                |                            5.27 |                         3.6  |              22.2 |           7.44 |
+| VCV_[d]            | D                |                            6.85 |                        13.56 |              22.2 |           6.62 |
+| VCV_[g]            | G                |                            5.47 |                         4.36 |              22.2 |           7.11 |
+| VCV_[kʰ]           | K                |                            5.56 |                         6.65 |              22.2 |           6.97 |
+| VCV_[pʰ]           | P                |                            5.46 |                         4.89 |              22.2 |           5.71 |
+| VCV_[tʰ]           | T                |                            5.58 |                         5.13 |              22.2 |           8.11 |
 ✅ **File Saved**: `final/vcvPlosiveFinals.csv`
 
 ---

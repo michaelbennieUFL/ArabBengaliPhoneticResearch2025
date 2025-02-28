@@ -432,7 +432,7 @@ def process_unaspirated_unvoiced_plosive_initials():
 
     filterer = FilterTestStimuli("out/unaspiratedUnvoicedPlosiveInitials.csv")
     print("🔍 Selecting best stimuli for Unaspirated Unvoiced Plosive Initials...")
-    best_solution = filterer.select_stimuli(n=15)
+    best_solution = filterer.select_stimuli(n=10)
 
     apaPlosiveUnaspiratedUnvoicedToTestedAllophoneTable = {
         "P": "[p]",
