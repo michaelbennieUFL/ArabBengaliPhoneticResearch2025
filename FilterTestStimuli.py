@@ -3,7 +3,6 @@ from collections import defaultdict
 import numpy as np
 from typing import Dict, List
 
-from GenerateTestItems import apaPlosiveInitalToTestedAllophoneTable
 from NeighborCalculator import NeighborCalculator
 import itertools
 from itertools import product, combinations
@@ -38,7 +37,7 @@ class FilterTestStimuli:
         self.dens_mean = np.mean(self.global_densities)
         self.dens_std = np.std(self.global_densities)
 
-    def get_candidate_generators(self, size: int, max_items=30):
+    def get_candidate_generators(self, size: int, max_items=100):
         """
         Instead of generating all permutations for each phoneme group at once,
         store the truncated list of phonemes along with the desired combination size.
@@ -109,9 +108,9 @@ class FilterTestStimuli:
                 "sd_density"]
 
             # Compute Euclidean distance incorporating standard deviations
-            distance = math.sqrt((p1 - p2) ** 2 + (d1 - d2) ** 2 + ((sd_p1 - sd_p2)/2)** 2 + ((sd_d1 - sd_d2)/1) ** 2)
+            distance = math.sqrt((p1 - p2) ** 2 + ((d1 - d2)/5) ** 2 + ((sd_p1 - sd_p2)/20)** 2 + ((sd_d1 - sd_d2)/20) ** 2)
             distance += (math.log((sd_p1 + sd_p2)+1) + math.log(sd_d1 + sd_d2+1))/100
-            distance +=-1/5*math.log(p1 + p2)
+            distance +=-1/10*math.log(p1 + p2)
             total_distance += distance
             count += 1
 
@@ -219,7 +218,7 @@ class FilterTestStimuli:
         Selects stimuli using both Simulated Annealing and Beam Search,
         compares their performance (both in quality and time), and returns the best solution.
         """
-        iterations = 100000  # local variable to set iterations for both algorithms
+        iterations = 5_00  # local variable to set iterations for both algorithms
         candidate_generators = self.get_candidate_generators(n)
 
         # Measure time for Simulated Annealing
@@ -347,7 +346,7 @@ def process_plosive_initials():
 
     filterer = FilterTestStimuli("out/plosiveInitials.csv")
     print("🔍 Selecting best stimuli for Plosive Initials...")
-    best_solution = filterer.select_stimuli(n=15)
+    best_solution = filterer.select_stimuli(n=20)
 
     apaPlosiveInitalToTestedAllophoneTable = {
         "P": "[pʰ]",
@@ -369,7 +368,7 @@ def process_plosive_finals():
 
     filterer = FilterTestStimuli("out/plosiveFinals.csv")
     print("🔍 Selecting best stimuli for Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=15)
+    best_solution = filterer.select_stimuli(n=20)
 
     apaPlosiveFinalToTestedAllophoneTable = {
         "P": "[p̚]",
@@ -391,7 +390,7 @@ def process_devoiced_plosive_finals():
 
     filterer = FilterTestStimuli("out/devoicedPlosives.csv")
     print("🔍 Selecting best stimuli for Devoiced Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=5)
+    best_solution = filterer.select_stimuli(n=10)
 
     apaPlosiveDevoicedToTestedAllophoneTable = {
         "B": "[b̥]",
@@ -410,7 +409,7 @@ def process_vcv_plosive_finals():
 
     filterer = FilterTestStimuli("out/VCVplosive.csv")
     print("🔍 Selecting best stimuli for VCV Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=5)
+    best_solution = filterer.select_stimuli(n=15)
 
     apaPlosiveVCVToTestedAllophoneTable = {
         "P": "VCV_[pʰ]",
@@ -432,7 +431,7 @@ def process_unaspirated_unvoiced_plosive_initials():
 
     filterer = FilterTestStimuli("out/unaspiratedUnvoicedPlosiveInitials.csv")
     print("🔍 Selecting best stimuli for Unaspirated Unvoiced Plosive Initials...")
-    best_solution = filterer.select_stimuli(n=10)
+    best_solution = filterer.select_stimuli(n=20)
 
     apaPlosiveUnaspiratedUnvoicedToTestedAllophoneTable = {
         "P": "[p]",
@@ -445,15 +444,27 @@ def process_unaspirated_unvoiced_plosive_initials():
     print(f"✅ Unaspirated Unvoiced Plosive Initials saved to {output_file}\n")
 
 
-def main():
-    """Main function to execute all processing steps"""
-    #process_plosive_initials()
-    process_plosive_finals()
-    #process_devoiced_plosive_finals()
-    process_vcv_plosive_finals()
-    #process_unaspirated_unvoiced_plosive_initials()
-    print("\n🎉 All processing complete!")
+import multiprocessing
 
+def main():
+    """Main function to execute all processing steps in parallel"""
+    processes = [
+        multiprocessing.Process(target=process_plosive_finals),
+        multiprocessing.Process(target=process_devoiced_plosive_finals),
+        multiprocessing.Process(target=process_plosive_initials),
+        multiprocessing.Process(target=process_vcv_plosive_finals),
+        multiprocessing.Process(target=process_unaspirated_unvoiced_plosive_initials)
+    ]
+
+    # Start all processes
+    for p in processes:
+        p.start()
+
+    # Wait for all processes to complete
+    for p in processes:
+        p.join()
+
+    print("\n🎉 All processing complete!")
 
 if __name__ == "__main__":
     main()

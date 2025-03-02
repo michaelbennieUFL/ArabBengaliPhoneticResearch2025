@@ -2,20 +2,22 @@
 
 import csv
 import os
-
+import re
 from TestVocabMaker import generateTestWordList
-from NgramAPI import getFrequency
+from NgramAPI import getFrequency,getFrequencyOfMostCommon
 import CMUreader
 from NeighborCalculator import NeighborCalculator  # Import the neighbor calculator class
+from CMUreader import generateCombinedWordsets
+import json
 
 
-def generateCSVFiles(word_set):
+
+def generateCSVFiles(word_set, frequency_cache):  # Modified to accept cache
     """
     Generates CSV files with neighborhood density column.
-    New columns: TestedPhoneme, Word, Frequency, ARPAbetTranscription, NeighborhoodDensity
+    Accepts and modifies a frequency cache dictionary
     """
     test_results = generateTestWordList(word_set)
-    frequency_cache = {}
     neighbor_calc = NeighborCalculator(word_set)  # Initialize neighbor calculator
 
     output_dir = "out"
@@ -37,13 +39,18 @@ def generateCSVFiles(word_set):
 
                     # Get or calculate frequency
                     if word_text in frequency_cache:
-                        frequency = frequency_cache[word_text]
+                        target_word,frequency = frequency_cache[word_text]
                     else:
                         try:
-                            frequency = getFrequency(word_text)
+                            if word_text.isupper():
+                                target_word,frequency = getFrequencyOfMostCommon(word_text)
+                            else:
+                                frequency = getFrequency(word_text)
+                                target_word =word_text
                         except Exception:
                             frequency = 0.0
-                        frequency_cache[word_text] = frequency
+                            continue
+                        frequency_cache[word_text] = (target_word,frequency)
 
                     # Calculate neighborhood density (phonemic distance <= 1)
                     pronunciation = word_dict["pronunciation"]
@@ -53,7 +60,7 @@ def generateCSVFiles(word_set):
                     )
                     density = len(neighbors)
 
-                    rows.append((phoneme, word_text, frequency, transcription, density))
+                    rows.append((phoneme, target_word, frequency, transcription, density))
 
                 # Sort by frequency descending
                 rows.sort(key=lambda x: x[2], reverse=True)
@@ -63,15 +70,28 @@ def generateCSVFiles(word_set):
                 # Write each row to the CSV file
                 for row in rows:
                     transcription = row[3]
-                    if transcription not in seen_transcriptions:
+                    transcription_hash=re.sub(r'\d', '', transcription)
+                    if transcription_hash not in seen_transcriptions:
                         writer.writerow(row)
-                        seen_transcriptions.add(transcription) # only keep the most common variant
+                        seen_transcriptions.add(transcription_hash) # only keep the most common variant
 
 
         print(f"CSV file generated: {csv_filename}")
 
 
 if __name__ == "__main__":
-    # Parse the CMUdict to get the original word set
-    word_set = CMUreader.parse_cmudict("cmudict-0.7b")
-    generateCSVFiles(word_set)
+    # Load frequency cache from file
+    cache_file = "frequency_cache.json"
+    try:
+        with open(cache_file, 'r') as f:
+            frequency_cache = json.load(f)
+    except FileNotFoundError:
+        frequency_cache = {}
+
+    # Parse the CMUdict and generate files
+    word_set = generateCombinedWordsets()
+    generateCSVFiles(word_set, frequency_cache)
+
+    # Save updated cache to file
+    with open(cache_file, 'w') as f:
+        json.dump(frequency_cache, f)

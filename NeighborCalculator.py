@@ -1,7 +1,7 @@
 from typing import List, Dict, Callable
 from functools import partial
 
-from CMUreader import parse_cmudict
+from CMUreader import parse_cmudict,generateCombinedWordsets
 
 
 class NeighborCalculator:
@@ -94,8 +94,8 @@ class NeighborCalculator:
 
 # Example usage:
 if __name__ == "__main__":
-    cmudict_path = 'cmudict-0.7b'  # Replace with your actual file path
-    word_list = parse_cmudict(cmudict_path)
+    cmudict_path = 'dictionaries/cmudict-0.7b'  # Replace with your actual file path
+    word_list = generateCombinedWordsets()
 
     # Initialize DataFilterer
     filterer = NeighborCalculator(word_list)

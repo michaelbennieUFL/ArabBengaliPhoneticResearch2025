@@ -2,10 +2,47 @@ from typing import List
 import re
 from typing import List, Dict
 
+def generateWordCategoryLists():
+    category_dict = {
+        "Consonants_Stops": ["P", "T", "K", "B", "D", "G"],
+        "Consonants_All": [
+            "B", "CH", "D", "DH", "F", "G", "HH", "JH", "K", "L",
+            "M", "N", "NG", "P", "R", "S", "SH", "T", "TH", "V",
+            "W", "Y", "Z", "ZH"
+        ],
+        "Consonants_Stops_Unvoiced": ["P", "T", "K"],
+        "Consonants_S": ["S"],
+        "Vowels_All": [
+            "AA", "AE", "AH", "AO", "AX", "AXR", "AW", "AY",
+            "EH", "ER", "EY", "IH", "IX", "IY", "OW", "OY",
+            "UH", "UW", "UX"
+        ],
+        "Vowels_Monophthong": [
+            "AA", "AE", "AH", "AO", "AX","AXR", "EH", "ER",
+            "IH", "IX", "IY", "UH", "UW", "UX"],
+        "Vowels_Uncentralized_NonMid": ["AA","AE", "IY","EH","UW","UH"]
+    }
+
+    category_dict["Vowels_Monophthong_Uncentralized_NonMid"] = list(
+        set(category_dict["Vowels_Monophthong"]) & set(category_dict["Vowels_Uncentralized_NonMid"])
+    )
+
+    category_dict["Consonants_Unvoiced"] = [
+        "P", "T", "K",
+        "F", "S", "SH", "TH",
+        "CH", "HH"
+    ]
+
+
+    category_dict["Consonants_Stops_Voiced"] = list(
+        set(category_dict["Consonants_Stops"]) - set(category_dict["Consonants_Stops_Unvoiced"]))
+
+    return category_dict
+
 def clean_string(text):
     return re.sub(r'[^a-zA-Z-]', '', text)
 
-def parse_cmudict(file_path, include_non_letter_symbols=False):
+def parse_cmudict(file_path, include_non_letter_symbols=False)->List[Dict]:
     """
     Parses a CMUdict-formatted file and returns a list of dictionaries.
 
@@ -112,11 +149,12 @@ def filterByLetters(word_list: List[Dict[str, List[str]]], initials: List[str], 
 
     return new_word_list
 
+vowels=generateWordCategoryLists()["Vowels_All"]
 def countSyllables(word:Dict[str, List[str]]) -> int:
     total = 0
 
     for phoneme in word['pronunciation']:
-        if phoneme[-1].isdigit():
+        if phoneme[-1].isdigit() or phoneme in vowels:
             total += 1
     return total
 
@@ -162,14 +200,31 @@ def removeDuplicatePronunciations(word_list: List[Dict[str, List[str]]]) -> List
 
     return unique_words
 
+def generateCombinedWordsets():
+    original_word_set = parse_cmudict("dictionaries/cmudict-0.7b")
+    new_word_set = parse_cmudict("dictionaries/Wiktionary_arpabet.tsv")
+    new_words_found=0
+    found_words=set()
+
+    for word in original_word_set:
+        found_words.add(word['word'].lower())
+
+    for item in new_word_set:
+
+        if item["word"]not in found_words:
+            new_words_found+=1
+            original_word_set.append(item)
+            found_words.add(item['word'])
+    print("New Words Found:", new_words_found)
+    return original_word_set
+
 # Example usage:
 if __name__ == "__main__":
-    cmudict_path = 'cmudict-0.7b'  # Replace with your actual file path
-    word_list = parse_cmudict(cmudict_path)
+    word_list = generateCombinedWordsets()
 
     #all the H sounds
     result=filterByLetters(word_list,["HH"])
-    for entry in result[:5]:
+    for entry in result[-5:]:
         print(entry)
 
 

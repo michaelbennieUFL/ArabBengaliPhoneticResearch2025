@@ -1,6 +1,17 @@
 # **ArabBengaliPhoneticResearch2025**
 This repository contains the **testing data** used for an **Arabic/Bengali Phonetic test**. 
 
+## **Vowels Tested**
+
+| **ARPAbet** | **IPA** | **Example Word** | **Counterpart in Najdi** | **Counterpart in Bengali** |
+|------------|--------|----------------|------------------|---|
+| **AA**     | /ɑ/    | **"father"** | ✔                | ✔ |
+| **AE**     | /æ/    | **"cat"** | ❌                | ✔ |
+| **IY**     | /i/    | **"beet"** | ✔                | ✔ |
+| **EH**     | /ɛ/    | **"bet"** | ✔                | ✔ |
+| **UW**     | /u/    | **"goose"** | ✔                | ✔ |
+| **UH**     | /ʊ/    | **"book"** | ✔                | ❌  |
+
 
 ---
 
@@ -64,7 +75,7 @@ Each dataset contains a markdown table summarizing:
 ---
 
 
-### **Devoiced Plosive Finals**
+### **Devoiced Plosives**
 | Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
 |-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
 | [b̥]           | B             | 0.53                         | 0.82                       | 2.20           | 0.75         |
