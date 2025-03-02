@@ -17,6 +17,8 @@ def convert_ipa_to_arpabet(ipa_str, ipa_to_arpabet):
     # Step 1: Remove extra characters like brackets, slashes, dashes, and diacritics
     ipa_str = re.sub(r'[ˌˈː.\-/\[\]]', '', ipa_str)
     ipa_str = ipa_str.replace('(ɹ)', '')
+    ipa_str = ipa_str.replace('̯', '')
+    ipa_str = ipa_str.replace('̃', '')
     ipa_str = ipa_str.replace(' ', '')
 
     # Step 2: Tokenize IPA into a list of phonemes using a longest-match greedy algorithm
@@ -45,11 +47,16 @@ def process_arpabet_conversion(df):
     ipa_to_arpabet = {
         # Vowels (from Wikipedia ARPABET)
         'ɑ': 'AA',  # balm, bot (with father–bother merger)
+        'ɒ': 'AA',
+        'ɐ': 'AA',
+        'a': 'AA',
         'æ': 'AE',  # bat
         'ʌ': 'AH',  # butt
         'ɔ': 'AO',  # caught, story
+        'o': 'AO',  # caught, story
         'aʊ': 'AW',  # bout
         'ə': 'AH',  # comma; per cmu standards
+        'ɜ': 'AH',  # comma; per cmu standards
         'ɚ': 'ER',  # letter, forward; per cmu standards
         'aɪ': 'AY',  # bite
         'ɛ': 'EH',  # bet
@@ -80,6 +87,7 @@ def process_arpabet_conversion(df):
         'd͡ʒ':'JH',
         'dʒ': 'JH',
         'k': 'K',
+        'kʰ':'K',
         'l': 'L',
         'm': 'M',
         'n': 'N',
@@ -87,6 +95,7 @@ def process_arpabet_conversion(df):
         'p': 'P',
         'ʔ': 'Q',
         'ɹ': 'R',
+        'r': 'R',
         's': 'S',
         'ʃ': 'SH',
         't': 'T',
@@ -98,8 +107,7 @@ def process_arpabet_conversion(df):
         'z': 'Z',
         'ʒ': 'ZH',
     }
-
-    convert_ipa_to_arpabet("[/ˈbɐ.ʔon/]", ipa_to_arpabet)
+    convert_ipa_to_arpabet("ɐː", ipa_to_arpabet)
 
 
     blocked_sounds=['ʍ','ʔ',"-"]
@@ -112,6 +120,8 @@ def process_arpabet_conversion(df):
             arpabet_transcription = convert_ipa_to_arpabet(ipa_transcription, ipa_to_arpabet)
             if arpabet_transcription and type(word) is str and word.isalpha():
                 arpabet_dict[word] = arpabet_transcription
+            if not arpabet_transcription:
+                print("FAILED:",ipa_transcription,"|",word)
 
     return pd.DataFrame(arpabet_dict.items(), columns=["Word", "ARPAbet"])
 
