@@ -19,13 +19,13 @@ This repository contains the **testing data** used for an **Arabic/Bengali Phone
 ### **Unfiltered Data**
 The unfiltered data consists of **all available words** containing each plosive phoneme. The number of words per phoneme varies across test conditions.
 
-| **Test Set Type \ Phoneme**  | **P** | **T** | **K** | **B** | **D** | **G** |
-|------------------------------|-------|-------|-------|-------|-------|-------|
-| **Plosive Initial**          | 106   | 93    | 148   | 147   | 117   | 54    |
-| **Plosive Final**            | 108   | 138   | 192   | 59    | 112   | 54    |
-| **VCV Plosive**              | 6     | 27    | 43    | 36    | 49    | 22    |
-| **Unaspirated Unvoiced Plosive** | 32  | 71    | 30    | -     | -     | -     |
-| **Devoiced Plosive**         | -     | -     | -     | 33    | 133   | 23    |
+| Test Set Type \ Phoneme      | P   | T   | K   | B   | D   | G   |
+|------------------------------|-----|-----|-----|-----|-----|-----|
+| Plosive Initial              | 151 | 158 | 245 | 214 | 184 | 110 |
+| Plosive Final                | 180 | 224 | 309 | 98  | 189 | 106 |
+| VCV Plosive                  | 20  | 38  | 59  | 48  | 64  | 31  |
+| Unaspirated Unvoiced Plosive | 52  | 109 | 60  | -   | -   | -   |
+| Devoiced Plosive             | -   | -   | -   | 63  | 206 | 49  |
 
 ### **Filtered Stimuli**
 The data was filtered to ensure that **selected stimuli**:

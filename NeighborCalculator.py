@@ -33,63 +33,67 @@ class NeighborCalculator:
 
         return unique_words
 
-    def phonemic_distance(self, pronunciation1: List[str], pronunciation2: List[str]) -> int:
-        """
-        Calculates the Levenshtein distance between two pronunciations.
-        Ignores numbers after syllables (e.g., 'EH1' becomes 'EH').
+    # Preprocess pronunciations by removing numbers
+    def preprocess(self,phonemes: List[str]) -> List[str]:
+        return [''.join([c for c in phoneme if not c.isdigit()]) for phoneme in phonemes]
 
-        Args:
-            pronunciation1 (List[str]): The first pronunciation to compare.
-            pronunciation2 (List[str]): The second pronunciation to compare.
+    def phonemic_distance(self, pronunciation1: List[str], pronunciation2: List[str], max_allowed=float('inf')) -> int:
+        pron1 = tuple(self.preprocess(pronunciation1))
+        pron2 = tuple(self.preprocess(pronunciation2))
 
-        Returns:
-            int: The Levenshtein distance between the two pronunciations.
-        """
+        if len(pron1) < len(pron2):
+            return self.phonemic_distance(pron2, pron1, max_allowed)
 
-        # Preprocess pronunciations by removing numbers
-        def preprocess(phonemes: List[str]) -> List[str]:
-            return [''.join([c for c in phoneme if not c.isdigit()]) for phoneme in phonemes]
 
-        pron1 = preprocess(pronunciation1)
-        pron2 = preprocess(pronunciation2)
 
-        # Levenshtein distance algorithm
-        m, n = len(pron1), len(pron2)
-        dp = [[0] * (n + 1) for _ in range(m + 1)]
+        previous_row = list(range(len(pron2) + 1))
 
-        for i in range(m + 1):
-            dp[i][0] = i
-        for j in range(n + 1):
-            dp[0][j] = j
+        for i, p1 in enumerate(pron1):
+            current_row = [i + 1]
+            min_val = float('inf')
+            for j, p2 in enumerate(pron2):
+                cost = 0 if p1 == p2 else 1
+                current_val = min(
+                    previous_row[j + 1] + 1,  # Deletion
+                    current_row[j] + 1,  # Insertion
+                    previous_row[j] + cost  # Substitution
+                )
+                current_row.append(current_val)
+                min_val = min(min_val, current_val)
 
-        for i in range(1, m + 1):
-            for j in range(1, n + 1):
-                cost = 0 if pron1[i - 1] == pron2[j - 1] else 1
-                dp[i][j] = min(dp[i - 1][j] + 1,  # Deletion
-                               dp[i][j - 1] + 1,  # Insertion
-                               dp[i - 1][j - 1] + cost)  # Substitution or no cost
+            # Early termination check
+            if min_val > max_allowed:
+                return min_val
 
-        return dp[m][n]
+            previous_row = current_row
 
-    def filter_by_phonemic_distance(self, target_pronunciation: List[str], target_distance=1,
-                                    operator=lambda input, target: input <= target) -> List[Dict[str, List[str]]]:
-        """
-        Filters words based on their phonemic distance from a target pronunciation.
+        return previous_row[-1]
 
-        Args:
-            target_pronunciation (List[str]): The target pronunciation to compare against.
-            target_distance (int): The target distance to compare.
-            operator (Callable[[int, int], bool]): A comparison operator to determine if the distance meets the criteria.
+    def filter_by_phonemic_distance(self, target_pronunciation, target_distance=1, limit_max_distance=None, operator=lambda i, t: i <= t):
+        # Preprocess target once
+        preprocessed_target = self.preprocess(target_pronunciation)
 
-        Returns:
-            List[Dict[str, List[str]]]: A list of words that meet the distance criteria.
-        """
-        matching_words = []
-        for word in self.word_dictionary:
-            distance = self.phonemic_distance(word["pronunciation"], target_pronunciation)
-            if operator(distance, target_distance):
-                matching_words.append(word)
-        return matching_words
+        max_distance=float('inf')
+        if limit_max_distance is None:
+            max_distance = target_distance
+
+        return [word for word in self.word_dictionary
+                if self._meets_distance_criteria(word, preprocessed_target,target_distance, max_distance, operator)]
+
+    def _meets_distance_criteria(self, word, target,target_distance, max_distance, operator):
+        # Quick length check first
+        word_pron = self.preprocess(word['pronunciation'])
+        target_word_len = len(target)
+        if abs(len(word_pron) - target_word_len) > max_distance*1.1+1:
+            return False
+
+        # Calculate with early termination
+        actual_distance = self.phonemic_distance(
+            word_pron,
+            target,
+            max_allowed=max_distance
+        )
+        return operator(actual_distance, target_distance)
 
 
 # Example usage:
@@ -105,6 +109,7 @@ if __name__ == "__main__":
     results = filterer.filter_by_phonemic_distance(
         target_pronunciation,
         target_distance=1,
+        limit_max_distance=1,
     )
 
     print("Words with phonemic distance 1 from [\"B\", \"EH1\"]:","Total:",len(results))

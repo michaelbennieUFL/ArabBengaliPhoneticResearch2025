@@ -9,7 +9,7 @@ import CMUreader
 from NeighborCalculator import NeighborCalculator  # Import the neighbor calculator class
 from CMUreader import generateCombinedWordsets
 import json
-
+from tqdm import tqdm
 
 
 def generateCSVFiles(word_set, frequency_cache):  # Modified to accept cache
@@ -23,6 +23,9 @@ def generateCSVFiles(word_set, frequency_cache):  # Modified to accept cache
     output_dir = "out"
     os.makedirs(output_dir, exist_ok=True)
 
+
+    distance_cache={}
+
     for test_type, test_dict in test_results.items():
         csv_filename = os.path.join(output_dir, f"{test_type}.csv")
         with open(csv_filename, "w", newline="", encoding="utf-8") as csvfile:
@@ -30,10 +33,11 @@ def generateCSVFiles(word_set, frequency_cache):  # Modified to accept cache
             # Add NeighborhoodDensity to header
             writer.writerow(["TestedPhoneme", "Word", "Frequency",
                              "ARPAbetTranscription", "NeighborhoodDensity"])
+            #for phoneme in tqdm(sorted(test_dict.keys()), desc=f"{test_type} phonemes", leave=False):
 
             for phoneme in sorted(test_dict.keys()):
                 rows = []
-                for word_dict in test_dict[phoneme]:
+                for word_dict in tqdm(test_dict[phoneme],desc=f"{test_type} phonemes| type:{phoneme}", leave=False):
                     word_text = word_dict["word"]
                     transcription = " ".join(word_dict["pronunciation"])
 
@@ -54,11 +58,17 @@ def generateCSVFiles(word_set, frequency_cache):  # Modified to accept cache
 
                     # Calculate neighborhood density (phonemic distance <= 1)
                     pronunciation = word_dict["pronunciation"]
-                    neighbors = neighbor_calc.filter_by_phonemic_distance(
-                        target_pronunciation=pronunciation,
-                        target_distance=1
-                    )
-                    density = len(neighbors)
+
+                    if tuple(pronunciation) in distance_cache:
+                        density=distance_cache[tuple(pronunciation)]
+                    else:
+                        neighbors = neighbor_calc.filter_by_phonemic_distance(
+                            target_pronunciation=pronunciation,
+                            target_distance=1,
+
+                        )
+                        density = len(neighbors)
+                        distance_cache[tuple(pronunciation)] = density
 
                     rows.append((phoneme, target_word, frequency, transcription, density))
 
