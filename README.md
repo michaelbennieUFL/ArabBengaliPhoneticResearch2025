@@ -42,10 +42,10 @@ Each table below provides an **aggregate summary** of the selected stimuli.
 Each dataset contains a markdown table summarizing:
 - **Tested Allophone**: The IPA transcription of the tested phoneme in its respective condition.
 - **Tested Phoneme**: The original phoneme used in the dataset.
-- **Average Probability (*1 Million)**: The mean probability of the selected stimuli.
-- **S.D. Probability (*1 Million)**: The standard deviation of probability.
+- **Average Probability \*100 Million**: The mean relative probability of the selected stimuli times $$10^8$$.
+- **C.V. Probability \*100 Million**: The coefficient of variation of the probability.
 - **Average Density**: The mean neighborhood density of selected words.
-- **S.D. Density**: The standard deviation of neighborhood density.
+- **C.V. Density**: The coefficient of variation of the neighborhood density.
 
 ### **Plosive Initials**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
