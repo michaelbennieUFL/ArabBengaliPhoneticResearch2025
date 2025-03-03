@@ -1,15 +1,16 @@
 # **ArabBengaliPhoneticResearch2025**
 This repository contains the **testing data** used for an **Arabic/Bengali Phonetic test**. 
+The final file for the testing stimuli is located at [`final/combined.csv`](https://github.com/michaelbennieUFL/ArabBengaliPhoneticResearch2025/blob/Master/final/combined.csv)
 
 ## **Vowels Tested**
 
 | **ARPAbet** | **IPA** | **Example Word** | **Counterpart in Najdi** | **Counterpart in Bengali** |
 |------------|--------|----------------|------------------|---|
-| **AA**     | /ɑ/    | **"father"** | ✔                | ✔ |
-| **AE**     | /æ/    | **"cat"** | ❌                | ✔ |
+| **AA**     | /ɑ/    | **"Bob"** | ✔                | ✔ |
+| **AE**     | /æ/    | **"bath"** | ❌                | ✔ |
 | **IY**     | /i/    | **"beet"** | ✔                | ✔ |
 | **EH**     | /ɛ/    | **"bet"** | ✔                | ✔ |
-| **UW**     | /u/    | **"goose"** | ✔                | ✔ |
+| **UW**     | /u/    | **"booed"** | ✔                | ✔ |
 | **UH**     | /ʊ/    | **"book"** | ✔                | ❌  |
 
 
@@ -47,28 +48,28 @@ Each dataset contains a markdown table summarizing:
 - **S.D. Density**: The standard deviation of neighborhood density.
 
 ### **Plosive Initials**
-| Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
-|-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
-| [b]            | B             | 33.71                        | 54.54                      | 41.40          | 10.86        |
-| [d]            | D             | 33.72                        | 50.24                      | 41.40          | 9.57         |
-| [g]            | G             | 33.29                        | 73.00                      | 40.80          | 4.20         |
-| [kʰ]           | K             | 33.77                        | 57.78                      | 41.47          | 10.52        |
-| [pʰ]           | P             | 33.61                        | 56.98                      | 41.33          | 9.78         |
-| [tʰ]           | T             | 33.68                        | 58.06                      | 41.33          | 9.25         |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
+|--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
+| [b]                | B                |                            1604.84 |                            2.42 |             55.85 |           0.28 |
+| [d]                | D                |                            1604.84 |                            2.48 |             55.85 |           0.3  |
+| [g]                | G                |                            1604.84 |                            3.43 |             55.75 |           0.2  |
+| [kʰ]               | K                |                            1604.86 |                            2.82 |             55.8  |           0.28 |
+| [pʰ]               | P                |                            1604.84 |                            2.99 |             55.85 |           0.29 |
+| [tʰ]               | T                |                            1604.84 |                            1.91 |             55.85 |           0.32 |
 
 ✅ **File Saved**: `final/plosiveInitials.csv`
 
 ---
 
 ### **Plosive Finals**
-| Tested Allophone   | Tested Phoneme   |   Average Probability *1Million |   S.D. Probability *1Million |   Average Density |   S.D. Density |
-|--------------------|------------------|---------------------------------|------------------------------|-------------------|----------------|
-| [b̚]                | B                |                           13.71 |                        26.73 |             38.53 |           6.27 |
-| [d̚]                | D                |                           21.41 |                        18.87 |             44.93 |           9.98 |
-| [g̚]                | G                |                            6.29 |                         8.65 |             38.33 |           4.41 |
-| [k̚]                | K                |                           20.16 |                        27.01 |             43.73 |           9.94 |
-| [p̚]                | P                |                           20.14 |                        32.89 |             43.73 |           8.83 |
-| [t̚]                | T                |                           31.88 |                        16.68 |             48.07 |           9.92 |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
+|--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
+| [b̚]                | B                |                             545.3  |                            3.53 |             53.05 |           0.13 |
+| [d̚]                | D                |                             545.2  |                            1.61 |             53.95 |           0.3  |
+| [g̚]                | G                |                             548.82 |                            1.26 |             50.5  |           0.23 |
+| [k̚]                | K                |                             545.39 |                            2.21 |             54.1  |           0.25 |
+| [p̚]                | P                |                             545.4  |                            1.89 |             53.75 |           0.2  |
+| [t̚]                | T                |                             545.42 |                            2.55 |             53.8  |           0.36 |
 
 ✅ **File Saved**: `final/plosiveFinals.csv`
 
@@ -76,35 +77,36 @@ Each dataset contains a markdown table summarizing:
 
 
 ### **Devoiced Plosives**
-| Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
-|-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
-| [b̥]           | B             | 0.53                         | 0.82                       | 2.20           | 0.75         |
-| [d̥]           | D             | 0.52                         | 0.14                       | 2.20           | 0.75         |
-| [g̥]           | G             | 0.53                         | 0.37                       | 2.20           | 0.75         |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
+|--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
+| [b̥]                | B                |                              17.77 |                            1.81 |              2.55 |           0.9  |
+| [d̥]                | D                |                              17.77 |                            1.1  |              2.55 |           0.75 |
+| [g̥]                | G                |                              17.77 |                            1.6  |              2.55 |           0.34 |
 
 ✅ **File Saved**: `final/devoicedPlosives.csv`
 
 ---
 
 ### **VCV Plosive Finals**
-| Tested Allophone   | Tested Phoneme   |   Average Probability *1Million |   S.D. Probability *1Million |   Average Density |   S.D. Density |
-|--------------------|------------------|---------------------------------|------------------------------|-------------------|----------------|
-| VCV_[b]            | B                |                            5.27 |                         3.6  |              22.2 |           7.44 |
-| VCV_[d]            | D                |                            6.85 |                        13.56 |              22.2 |           6.62 |
-| VCV_[g]            | G                |                            5.47 |                         4.36 |              22.2 |           7.11 |
-| VCV_[kʰ]           | K                |                            5.56 |                         6.65 |              22.2 |           6.97 |
-| VCV_[pʰ]           | P                |                            5.46 |                         4.89 |              22.2 |           5.71 |
-| VCV_[tʰ]           | T                |                            5.58 |                         5.13 |              22.2 |           8.11 |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
+|--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
+| VCV_[b]            | B                |                             108.98 |                            1.46 |             28.6  |           0.38 |
+| VCV_[d]            | D                |                             108.98 |                            1.41 |             28.6  |           0.51 |
+| VCV_[g]            | G                |                             109.28 |                            2.46 |             27.73 |           0.4  |
+| VCV_[kʰ]           | K                |                             108.94 |                            2.22 |             28.6  |           0.37 |
+| VCV_[pʰ]           | P                |                             108.74 |                            1.88 |             28.4  |           0.4  |
+| VCV_[tʰ]           | T                |                             108.98 |                            1.95 |             28.6  |           0.52 |
+
 ✅ **File Saved**: `final/vcvPlosiveFinals.csv`
 
 ---
 
 ### **Unaspirated Unvoiced Plosive Initials**
-| Tested Allophone | Tested Phoneme | Average Probability *1Million | S.D. Probability *1Million | Average Density | S.D. Density |
-|-----------------|---------------|------------------------------|---------------------------|----------------|--------------|
-| [k]            | K             | 5.94                         | 14.20                      | 19.53          | 5.56         |
-| [p]            | P             | 5.91                         | 17.11                      | 19.47          | 4.00         |
-| [t]            | T             | 5.91                         | 16.26                      | 19.53          | 5.31         |
+| Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
+|--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
+| [k]                | K                |                              497.1 |                            2.2  |              26.1 |           0.29 |
+| [p]                | P                |                              497.1 |                            2.75 |              26.1 |           0.26 |
+| [t]                | T                |                              497.1 |                            2.93 |              26.1 |           0.35 |
 
 ✅ **File Saved**: `final/unaspiratedUnvoicedPlosiveInitials.csv`
 
