@@ -37,7 +37,7 @@ class FilterTestStimuli:
         self.dens_mean = np.mean(self.global_densities)
         self.dens_std = np.std(self.global_densities)
 
-    def get_candidate_generators(self, size: int, max_items=100):
+    def get_candidate_generators(self, size: int, max_items=int(1e5)) -> List[NeighborCalculator]:
         """
         Instead of generating all permutations for each phoneme group at once,
         store the truncated list of phonemes along with the desired combination size.
@@ -65,8 +65,8 @@ class FilterTestStimuli:
         # Randomly select a combination of items
         combination = tuple(random.sample(phoneme_list, size))
 
-        # Multiply probability by 10**6 (1 million)
-        prob_values = [item[1] * 10 ** 6 for item in combination]
+
+        prob_values = [item[1] * 100_000_000 for item in combination]
         density_values = [item[2] for item in combination]
 
         total_probability = sum(prob_values)
@@ -108,9 +108,9 @@ class FilterTestStimuli:
                 "sd_density"]
 
             # Compute Euclidean distance incorporating standard deviations
-            distance = math.sqrt((p1 - p2) ** 2 + ((d1 - d2)/5) ** 2 + ((sd_p1 - sd_p2)/20)** 2 + ((sd_d1 - sd_d2)/20) ** 2)
-            distance += (math.log((sd_p1 + sd_p2)+1) + math.log(sd_d1 + sd_d2+1))/100
-            distance +=-1/10*math.log(p1 + p2)
+            distance = math.sqrt((p1 - p2) ** 2 + ((d1 - d2)/2) ** 2 + ((sd_p1/p1 - sd_p2/p2)/4)** 2 + ((sd_d1/d1 - sd_d2/d2)/4) ** 2)
+            distance += (math.log((sd_p1 + sd_p2)+1))/20
+            distance +=-1/2*math.log(p1 + p2)
             total_distance += distance
             count += 1
 
@@ -218,7 +218,7 @@ class FilterTestStimuli:
         Selects stimuli using both Simulated Annealing and Beam Search,
         compares their performance (both in quality and time), and returns the best solution.
         """
-        iterations = 5_00  # local variable to set iterations for both algorithms
+        iterations = 100_000  # local variable to set iterations for both algorithms
         candidate_generators = self.get_candidate_generators(n)
 
         # Measure time for Simulated Annealing
@@ -284,7 +284,7 @@ class FilterTestStimuli:
 
         # Write CSV file with detailed candidate rows.
         with open(filename, 'w', newline='') as csvfile:
-            fieldnames = ["Tested Allophone", "Tested Phoneme", "Word", "Frequency", "Density", "Phonemic Length",
+            fieldnames = ["Tested Allophone", "Tested Phoneme", "Word", "Frequency*100 Million", "Density", "Phonemic Length",
                           "Transcription"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
@@ -300,8 +300,8 @@ class FilterTestStimuli:
                         "Tested Allophone": tested_allophone,
                         "Tested Phoneme": tested_phoneme,
                         "Word": item[0],
-                        "Frequency": item[1],
-                        "Density": item[2],
+                        "Frequency*100 Million": f"{item[1]*100_000_000:.4f}",
+                        "Density": int(item[2]),
                         "Phonemic Length": phonemic_length,
                         "Transcription": item[4]
                     })
@@ -325,14 +325,14 @@ class FilterTestStimuli:
 
             summary_rows.append([
                 tested_allophone, tested_phoneme,
-                f"{avg_probability:.2f}", f"{sd_probability:.2f}",
-                f"{avg_density:.2f}", f"{sd_density:.2f}"
+                f"{avg_probability:.2f}", f"{(sd_probability/avg_probability):.2f}",
+                f"{avg_density:.2f}", f"{(sd_density/avg_density):.2f}"
             ])
 
         headers = [
             "Tested Allophone", "Tested Phoneme",
-            "Average Probability *1Million", "S.D. Probability *1Million",
-            "Average Density", "S.D. Density"
+            "Average Probability *100 Million", "C.V. Probability *100 Million",
+            "Average Density", "C.V. Density"
         ]
         md_table = tabulate(summary_rows, headers=headers, tablefmt="github")
 
@@ -390,7 +390,7 @@ def process_devoiced_plosive_finals():
 
     filterer = FilterTestStimuli("out/devoicedPlosives.csv")
     print("🔍 Selecting best stimuli for Devoiced Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=10)
+    best_solution = filterer.select_stimuli(n=20)
 
     apaPlosiveDevoicedToTestedAllophoneTable = {
         "B": "[b̥]",

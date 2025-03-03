@@ -1,31 +1,61 @@
-Tested Allophone,Tested Phoneme,Word,Frequency,Density,Phonemic Length,Transcription
-[b̥],B,websites,1.8378039470079359e-06,3.0,7,W EH1 B S AY2 T S
-[b̥],B,absently,5.859488742825232e-07,1.0,7,AE B S EN T L IY
-[b̥],B,absentees,4.264507433658166e-07,2.0,8,AE2 B S AH0 N T IY1 Z
-[b̥],B,Abyssinian,4.478147820879461e-07,3.0,8,AE0 B S IH1 N IY2 AH0 N
-[b̥],B,abscond,1.2042759692655138e-07,3.0,7,AE0 B S K AA1 N D
-[b̥],B,absconce,1.5819651402912518e-10,2.0,7,AE B S K AA N S
-[b̥],B,absolutes,2.9338694957024895e-07,5.0,8,AE1 B S AH0 L UW2 T S
-[b̥],B,obsoletes,7.369654693109973e-09,3.0,8,AA2 B S AH0 L IY1 T S
-[b̥],B,Gebhard,1.459072481228373e-07,1.0,6,G EH1 B HH ER0 D
-[b̥],B,obscenely,8.24369043312089e-08,2.0,7,AA0 B S IY1 N L IY0
-[d̥],D,Goodstein,7.37871594913506e-08,2.0,7,G UH1 D S T AY2 N
-[d̥],D,Redfern,2.5911087132331187e-07,4.0,6,R EH1 D F ER2 N
-[d̥],D,childhoods,1.5092247811506444e-07,2.0,8,CH AY1 L D HH UH2 D Z
-[d̥],D,headstone,2.5753941924249725e-07,5.0,7,HH EH1 D S T OW2 N
-[d̥],D,feedstocks,3.2059825184889796e-07,2.0,8,F IY1 D S T AA2 K S
-[d̥],D,Bradshaw,1.3545436339617488e-06,2.0,6,B R AE1 D SH AO2
-[d̥],D,feedstock,6.018351083954543e-07,2.0,7,F IY1 D S T AA2 K
-[d̥],D,ad,2.1537354016929746e-07,2.0,5,AE1 D HH AA1 K
-[d̥],D,godsend,2.170656421231533e-07,2.0,7,G AA1 D S EH2 N D
-[d̥],D,godfather,5.088120537931698e-07,2.0,7,G AA1 D F AA2 DH ER0
-[g̥],G,egghead,2.8231569669760935e-08,3.0,5,EH1 G HH EH2 D
-[g̥],G,Hogston,6.122104968551176e-09,4.0,7,HH AA1 G S T AH0 N
-[g̥],G,Siegfried,1.0386582364896552e-06,2.0,7,S IY1 G F R IY2 D
-[g̥],G,flagship,8.791586037073091e-07,2.0,7,F L AE1 G SH IH2 P
-[g̥],G,Hogsett,2.4583037409494278e-08,1.0,6,HH AA1 G S IH0 T
-[g̥],G,Leghorn,7.745116096770428e-07,3.0,7,L EH1 G HH AO0 R N
-[g̥],G,Leghorns,3.3495508611892093e-07,3.0,8,L EH1 G HH AO0 R N Z
-[g̥],G,bragfest,5.35665411427734e-11,1.0,8,B R AE G F EH S T
-[g̥],G,Flagstaff,5.67758778278573e-07,3.0,8,F L AE1 G S T AE2 F
-[g̥],G,Cogswell,3.144751456365871e-07,3.0,7,K AA1 G S W EH2 L
+Tested Allophone,Tested Phoneme,Word,Frequency*100 Million,Density,Phonemic Length,Transcription
+[b̥],B,gabfest,0.4709,1,7,G AE B F EH S T
+[b̥],B,Sobczyk,0.8868,2,6,S AA1 B CH IH0 K
+[b̥],B,abscondence,0.2821,1,9,AE B S K AA N D EN S
+[b̥],B,abscond,12.0428,3,7,AE0 B S K AA1 N D
+[b̥],B,Sobczak,1.6053,2,6,S AA1 B CH AE0 K
+[b̥],B,Dobson,123.7453,9,6,D AA1 B S AH0 N
+[b̥],B,Drebsky,0.0100,1,7,D R EH1 B S K IY0
+[b̥],B,Jobson,14.0408,7,6,JH AA1 B S AH0 N
+[b̥],B,jobster,0.0127,5,6,JH AA B S T ER
+[b̥],B,Hobsbawm,24.5873,1,7,HH AA0 B S B AO1 M
+[b̥],B,Gebhard,14.5907,1,6,G EH1 B HH ER0 D
+[b̥],B,mobster,8.3273,6,6,M AA1 B S T ER0
+[b̥],B,Dubcek,9.4528,2,6,D UW1 B CH EH2 K
+[b̥],B,Abscam,2.5096,1,6,AE1 B S K AE0 M
+[b̥],B,cobswan,0.0112,1,7,K AA B S W AA N
+[b̥],B,Rebstock,1.2633,1,7,R EH1 B S T AA2 K
+[b̥],B,absently,58.5949,1,7,AE B S EN T L IY
+[b̥],B,lobsters,82.5060,3,7,L AA1 B S T ER0 Z
+[b̥],B,Lebsack,0.3207,1,6,L EH1 B S AH0 K
+[b̥],B,webhooks,0.0632,2,7,W EH B HH UH K S
+[d̥],D,Woodfill,1.5141,2,6,W UH1 D F IH2 L
+[d̥],D,Brodhead,24.2976,2,7,B R AA1 D HH EH2 D
+[d̥],D,Hadsell,2.2040,5,6,HH AE1 D S AH0 L
+[d̥],D,godsend,21.7066,2,7,G AA1 D S EH2 N D
+[d̥],D,headship,29.2219,1,6,HH EH1 D SH IH2 P
+[d̥],D,Roundhead,7.4080,1,7,R AW1 N D HH EH2 D
+[d̥],D,Goodhue,27.5220,1,6,G UH1 D HH Y UW2
+[d̥],D,headstone,25.7539,5,7,HH EH1 D S T OW2 N
+[d̥],D,Nadsat,0.1375,1,6,N AA D S AH T
+[d̥],D,redheads,6.4982,3,7,R EH1 D HH EH1 D Z
+[d̥],D,Medhurst,7.9673,1,8,M EH D HH AH R S T
+[d̥],D,Hodson,44.3964,9,6,HH AA1 D S AH0 N
+[d̥],D,Gladstones,2.1876,2,9,G L AE1 D S T OW2 N Z
+[d̥],D,Goodchild,14.9519,2,7,G UH1 D CH AY2 L D
+[d̥],D,Woodhouse,66.7873,3,6,W UH1 D HH AW2 S
+[d̥],D,seedsnipe,0.0531,1,7,S IY D S N AY P
+[d̥],D,feedstock,60.1835,2,7,F IY1 D S T AA2 K
+[d̥],D,Godshalk,2.0212,2,6,G AA1 D SH AH0 K
+[d̥],D,Goodsons,0.0894,4,7,G UH1 D S AH0 N Z
+[d̥],D,headsets,10.4290,2,7,HH EH1 D S EH2 T S
+[g̥],G,Siegfried,103.8658,2,7,S IY1 G F R IY2 D
+[g̥],G,flagstaffs,1.6791,3,9,F L AE1 G S T AE2 F S
+[g̥],G,Cogswell,31.4475,3,7,K AA1 G S W EH2 L
+[g̥],G,Gregson,21.9970,3,7,G R EH1 G S AH0 N
+[g̥],G,eggheads,2.3051,3,6,EH1 G HH EH2 D Z
+[g̥],G,Hogston,0.6122,4,7,HH AA1 G S T AH0 N
+[g̥],G,Logston,0.3411,3,7,L AA1 G S T AH0 N
+[g̥],G,flagstone,16.6352,2,8,F L AE1 G S T OW2 N
+[g̥],G,Flagstaff,56.7759,3,8,F L AE1 G S T AE2 F
+[g̥],G,Cleghorn,12.5397,2,7,K L EH1 G HH ER0 N
+[g̥],G,Clogston,2.0008,3,8,K L AA1 G S T AH0 N
+[g̥],G,Rogstad,0.8009,3,7,R AA1 G S T AH0 D
+[g̥],G,Scrogham,0.0667,1,8,S K R AA1 G HH AH0 M
+[g̥],G,eggshell,24.1440,2,5,EH1 G SH EH2 L
+[g̥],G,Leghorn,77.4512,3,7,L EH1 G HH AO0 R N
+[g̥],G,Gleghorn,0.4843,2,7,G L EH1 G HH ER0 N
+[g̥],G,Craghead,0.7332,3,7,K R AE1 G HH EH2 D
+[g̥],G,bragfest,0.0054,1,8,B R AE G F EH S T
+[g̥],G,Hegseth,0.1070,1,6,HH EH G S EH TH
+[g̥],G,Hegstrom,1.3439,4,8,HH EH1 G S T R AH0 M
