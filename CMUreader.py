@@ -1,6 +1,6 @@
 from typing import List
 import re
-from typing import List, Dict
+from typing import List, Dict,Set
 
 def generateWordCategoryLists():
     category_dict = {
@@ -41,6 +41,38 @@ def generateWordCategoryLists():
 
 def clean_string(text):
     return re.sub(r'[^a-zA-Z-]', '', text)
+
+
+
+def load_unique_words(file_path: str) -> Set[str]:
+    """
+    Loads a file containing a list of unique words into a set.
+
+    Args:
+        file_path (str): The path to the file containing unique words.
+
+    Returns:
+        Set[str]: A set of unique words.
+    """
+    with open(file_path, "r") as file:
+        unique_words = {line.strip() for line in file}
+    return unique_words
+
+def filter_cmudict_words(cmudict_entries: List[Dict], unique_words: Set[str]) -> List[Dict]:
+    """
+    Filters CMUdict entries based on a set of unique words.
+
+    Args:
+        cmudict_entries (List[Dict]): A list of dictionaries with 'word' and 'pronunciation' keys.
+        unique_words (Set[str]): A set of unique words to filter against.
+
+    Returns:
+        List[Dict]: A filtered list of CMUdict entries where the words are in the unique words set.
+    """
+    return [entry for entry in cmudict_entries if entry['word'].lower() in unique_words]
+
+
+
 
 def parse_cmudict(file_path, include_non_letter_symbols=False)->List[Dict]:
     """

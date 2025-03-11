@@ -1,6 +1,8 @@
 import CMUreader
 from tabulate import tabulate
-from CMUreader import parse_cmudict,generateCombinedWordsets,generateWordCategoryLists
+from CMUreader import parse_cmudict, generateCombinedWordsets, generateWordCategoryLists, load_unique_words, \
+    filter_cmudict_words
+
 
 #TODO:
 # talk aboout AO sound
@@ -162,4 +164,8 @@ if __name__ == "__main__":
 
     original_word_set=generateCombinedWordsets()
 
-    result = generateTestWordList(original_word_set)
+    unique_l2_words=load_unique_words("dictionaries/Oxford_3000_5000_AmericanEnglish.txt")
+
+    filtered_word_set=filter_cmudict_words(original_word_set,unique_l2_words)
+
+    result = generateTestWordList(filtered_word_set)
