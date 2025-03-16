@@ -37,7 +37,7 @@ class FilterTestStimuli:
         self.dens_mean = np.mean(self.global_densities)
         self.dens_std = np.std(self.global_densities)
 
-    def get_candidate_generators(self, size: int, max_items=int(1e5)) -> List[NeighborCalculator]:
+    def get_candidate_generators(self, size: int, max_items=int(1e5), min_frequency=1.2*10**-7) -> List[NeighborCalculator]:
         """
         Instead of generating all permutations for each phoneme group at once,
         store the truncated list of phonemes along with the desired combination size.
@@ -52,7 +52,7 @@ class FilterTestStimuli:
             for item in phonemes:
                 item[-1] = " ".join(item[-1])
             # Truncate to max_items and convert each entry to a tuple
-            phonemes = [tuple(item) for item in phonemes[:min(max_items, len(phonemes))]]
+            phonemes = [tuple(item) for item in phonemes[:min(max_items, len(phonemes))] if item[1]>min_frequency]
             candidate_generators.append((phonemes, size))
         return candidate_generators
 
@@ -109,8 +109,7 @@ class FilterTestStimuli:
 
             # Compute Euclidean distance incorporating standard deviations
             distance = math.sqrt((p1 - p2) ** 2 + ((d1 - d2)/2) ** 2 + ((sd_p1/p1 - sd_p2/p2)/4)** 2 + ((sd_d1/d1 - sd_d2/d2)/4) ** 2)
-            distance += (math.log((sd_p1 + sd_p2)+1))/20
-            distance +=-1/2*math.log(p1 + p2)
+            distance +=-25*math.sqrt(p1 + p2)
             total_distance += distance
             count += 1
 
@@ -224,7 +223,7 @@ class FilterTestStimuli:
         # Measure time for Simulated Annealing
         start_time_sa = time.time()
         best_solution, best_score = self.simulated_annealing(candidate_generators,
-                                                             iterations=iterations*1000,
+                                                             iterations=iterations*100,
                                                              calc_distance_fn=self.calculate_average_distance_between_items)
         end_time_sa = time.time()
         sa_time = end_time_sa - start_time_sa
@@ -291,7 +290,9 @@ class FilterTestStimuli:
 
             # best_solution is a list of candidate dictionaries, one per phoneme group.
             for candidate in best_solution:
-                for item in candidate["combination"]:
+                combinations=list(candidate["combination"])
+                combinations.sort(key= lambda item : (len(item[4].split()),item[1],item[2]),reverse=True)
+                for item in combinations:
                     # item is expected to be a tuple: (word, frequency, density, TestedPhoneme, transcription)
                     tested_phoneme = item[3]
                     tested_allophone = translationTable.get(tested_phoneme, tested_phoneme)
@@ -346,7 +347,7 @@ def process_plosive_initials():
 
     filterer = FilterTestStimuli("out/plosiveInitials.csv")
     print("🔍 Selecting best stimuli for Plosive Initials...")
-    best_solution = filterer.select_stimuli(n=20)
+    best_solution = filterer.select_stimuli(n=5)
 
     apaPlosiveInitalToTestedAllophoneTable = {
         "P": "[pʰ]",
@@ -368,7 +369,7 @@ def process_plosive_finals():
 
     filterer = FilterTestStimuli("out/plosiveFinals.csv")
     print("🔍 Selecting best stimuli for Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=20)
+    best_solution = filterer.select_stimuli(n=5)
 
     apaPlosiveFinalToTestedAllophoneTable = {
         "P": "[p̚]",
@@ -390,7 +391,7 @@ def process_devoiced_plosive_finals():
 
     filterer = FilterTestStimuli("out/devoicedPlosives.csv")
     print("🔍 Selecting best stimuli for Devoiced Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=20)
+    best_solution = filterer.select_stimuli(n=5)
 
     apaPlosiveDevoicedToTestedAllophoneTable = {
         "B": "[b̥]",
@@ -409,7 +410,7 @@ def process_vcv_plosive_finals():
 
     filterer = FilterTestStimuli("out/VCVplosive.csv")
     print("🔍 Selecting best stimuli for VCV Plosive Finals...")
-    best_solution = filterer.select_stimuli(n=15)
+    best_solution = filterer.select_stimuli(n=5)
 
     apaPlosiveVCVToTestedAllophoneTable = {
         "P": "VCV_[pʰ]",
@@ -431,7 +432,7 @@ def process_unaspirated_unvoiced_plosive_initials():
 
     filterer = FilterTestStimuli("out/unaspiratedUnvoicedPlosiveInitials.csv")
     print("🔍 Selecting best stimuli for Unaspirated Unvoiced Plosive Initials...")
-    best_solution = filterer.select_stimuli(n=20)
+    best_solution = filterer.select_stimuli(n=5)
 
     apaPlosiveUnaspiratedUnvoicedToTestedAllophoneTable = {
         "P": "[p]",
