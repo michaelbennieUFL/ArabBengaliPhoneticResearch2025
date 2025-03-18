@@ -50,12 +50,12 @@ Each dataset contains a markdown table summarizing:
 ### **Plosive Initials**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| [b]                | B                |                            1477.45 |                            1.21 |              60.4 |           0.37 |
-| [d]                | D                |                            1477.33 |                            1.26 |              60.4 |           0.17 |
-| [g]                | G                |                            1477.48 |                            1.3  |              60.4 |           0.08 |
-| [kʰ]               | K                |                            1477.42 |                            1.19 |              60.2 |           0.22 |
-| [pʰ]               | P                |                            1477.47 |                            0.76 |              60   |           0.33 |
-| [tʰ]               | T                |                            1477.44 |                            0.82 |              60.4 |           0.17 |
+| [b]                | B                |                            2466.86 |                            0.96 |              62.6 |           0.13 |
+| [d]                | D                |                            2466.92 |                            1.29 |              62.8 |           0.12 |
+| [g]                | G                |                            2466.29 |                            1.63 |              62   |           0.08 |
+| [kʰ]               | K                |                            2466.93 |                            1.48 |              62.6 |           0.3  |
+| [pʰ]               | P                |                            2466.82 |                            1.12 |              62.6 |           0.05 |
+| [tʰ]               | T                |                            2466.93 |                            1.93 |              62.6 |           0.29 |
 
 ✅ **File Saved**: `final/plosiveInitials.csv`
 
@@ -64,12 +64,12 @@ Each dataset contains a markdown table summarizing:
 ### **Plosive Finals**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| [b̚]                | B                |                             905.39 |                            0.71 |              54   |           0.19 |
-| [d̚]                | D                |                             905.69 |                            1.04 |              55.2 |           0.1  |
-| [g̚]                | G                |                             905.76 |                            0.94 |              55   |           0.11 |
-| [k̚]                | K                |                             905.51 |                            1.6  |              55.2 |           0.27 |
-| [p̚]                | P                |                             905.74 |                            1.54 |              54.6 |           0.17 |
-| [t̚]                | T                |                             905.82 |                            1.23 |              55.2 |           0.14 |
+| [b̚]                | B                |                             929.02 |                            1.6  |              55   |           0.17 |
+| [d̚]                | D                |                             928.92 |                            1.41 |              55.6 |           0.21 |
+| [g̚]                | G                |                             929.11 |                            1.05 |              55.2 |           0.11 |
+| [k̚]                | K                |                             929.07 |                            1.56 |              55.2 |           0.24 |
+| [p̚]                | P                |                             929.06 |                            1.48 |              55.4 |           0.16 |
+| [t̚]                | T                |                             929.07 |                            1.34 |              55.8 |           0.13 |
 
 ✅ **File Saved**: `final/plosiveFinals.csv`
 
@@ -79,9 +79,9 @@ Each dataset contains a markdown table summarizing:
 ### **Devoiced Plosives**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| [b̥]                | B                |                              74.91 |                            0.78 |               2.4 |           0.5  |
-| [d̥]                | D                |                              74.91 |                            0.67 |               2.4 |           0.62 |
-| [g̥]                | G                |                              71.9  |                            0.34 |               2.6 |           0.19 |
+| [b̥]                | B                |                               74.8 |                            0.82 |               4   |           0.77 |
+| [d̥]                | D                |                               74.8 |                            0.78 |               4   |           1.14 |
+| [g̥]                | G                |                               71.9 |                            0.34 |               2.6 |           0.19 |
 
 ✅ **File Saved**: `final/devoicedPlosives.csv`
 
@@ -90,12 +90,12 @@ Each dataset contains a markdown table summarizing:
 ### **VCV Plosive Finals**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| VCV_[b]            | B                |                             387.89 |                            0.77 |              31.4 |           0.52 |
-| VCV_[d]            | D                |                             387.39 |                            1.86 |              32.2 |           0.42 |
-| VCV_[g]            | G                |                             387.61 |                            0.99 |              31.6 |           0.32 |
-| VCV_[kʰ]           | K                |                             386.53 |                            1.04 |              32.2 |           0.35 |
-| VCV_[pʰ]           | P                |                             319.52 |                            0.76 |              34.4 |           0.23 |
-| VCV_[tʰ]           | T                |                             387.38 |                            1.18 |              31.8 |           0.39 |
+| VCV_[b]            | B                |                             393.1  |                            0.74 |              30.6 |           0.52 |
+| VCV_[d]            | D                |                             393.07 |                            1.83 |              30.2 |           0.46 |
+| VCV_[g]            | G                |                             392.82 |                            0.97 |              29.2 |           0.34 |
+| VCV_[kʰ]           | K                |                             395.31 |                            1    |              31.4 |           0.34 |
+| VCV_[pʰ]           | P                |                             213.78 |                            1.11 |              30.2 |           0.28 |
+| VCV_[tʰ]           | T                |                             392.56 |                            1.14 |              32.4 |           0.21 |
 
 ✅ **File Saved**: `final/vcvPlosiveFinals.csv`
 
@@ -104,9 +104,9 @@ Each dataset contains a markdown table summarizing:
 ### **Unaspirated Unvoiced Plosive Initials**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| [k]                | K                |                            1696.43 |                            0.98 |              26.6 |           0.4  |
-| [p]                | P                |                            1696.54 |                            1.38 |              26.6 |           0.31 |
-| [t]                | T                |                            1696.4  |                            1.44 |              26.2 |           0.33 |
+| [k]                | K                |                            1774.93 |                            0.9  |              29.6 |           0.33 |
+| [p]                | P                |                            1775.37 |                            1.45 |              30.2 |           0.06 |
+| [t]                | T                |                            1775.14 |                            1.61 |              29.8 |           0.22 |
 
 ✅ **File Saved**: `final/unaspiratedUnvoicedPlosiveInitials.csv`
 

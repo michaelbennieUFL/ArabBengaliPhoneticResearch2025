@@ -1,14 +1,14 @@
 Tested Allophone,Tested Phoneme,Word,Frequency*100 Million,Density,Phonemic Length,Transcription
-[b̥],B,websites,183.7804,3,7,W EH1 B S AY2 T S
-[b̥],B,lobsters,82.5060,3,7,L AA1 B S T ER0 Z
 [b̥],B,absently,58.5949,1,7,AE B S EN T L IY
-[b̥],B,Hobsbawm,24.5873,1,7,HH AA0 B S B AO1 M
-[b̥],B,Babson,25.0767,4,6,B AE1 B S AH0 N
-[d̥],D,Bradstreet,68.4511,3,9,B R AE1 D S T R IY2 T
+[b̥],B,abscond,12.0428,3,7,AE0 B S K AA1 N D
+[b̥],B,lobster,171.4438,6,6,L AA1 B S T ER0
+[b̥],B,Robson,117.3463,9,6,R AA1 B S AH0 N
+[b̥],B,Gebhard,14.5907,1,6,G EH1 B HH ER0 D
+[d̥],D,spreadsheet,122.9612,2,8,S P R EH1 D SH IY2 T
+[d̥],D,headstones,19.9986,3,8,HH EH1 D S T OW2 N Z
 [d̥],D,bloodshed,164.8819,1,7,B L AH1 D SH EH2 D
-[d̥],D,Godhead,85.1586,1,6,G AA1 D HH EH2 D
-[d̥],D,redhead,34.5123,5,6,R EH1 D HH EH2 D
-[d̥],D,ad,21.5374,2,5,AE1 D HH AA1 K
+[d̥],D,Redford,38.6330,13,6,R EH1 D F ER0 D
+[d̥],D,Goodhue,27.5220,1,6,G UH1 D HH Y UW2
 [g̥],G,Flagstaff,56.7759,3,8,F L AE1 G S T AE2 F
 [g̥],G,Leghorns,33.4955,3,8,L EH1 G HH AO0 R N Z
 [g̥],G,Siegfried,103.8658,2,7,S IY1 G F R IY2 D
