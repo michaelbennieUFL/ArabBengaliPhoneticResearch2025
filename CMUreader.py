@@ -37,6 +37,9 @@ def generateWordCategoryLists():
     category_dict["Consonants_Stops_Voiced"] = list(
         set(category_dict["Consonants_Stops"]) - set(category_dict["Consonants_Stops_Unvoiced"]))
 
+    category_dict["Consonants_Stops_NONE"] = list(
+        set(category_dict["Consonants_All"]) - set(category_dict["Consonants_Stops"]))
+
     return category_dict
 
 def clean_string(text):
