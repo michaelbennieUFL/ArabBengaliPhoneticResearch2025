@@ -1,241 +1,241 @@
 Tested Allophone,Tested Phoneme,Word,Frequency*100 Million,Density,Phonemic Length,Transcription
-[b̥],B,websites,183.7804,3,7,W EH1 B S AY2 T S
-[b̥],B,lobsters,82.506,3,7,L AA1 B S T ER0 Z
 [b̥],B,absently,58.5949,1,7,AE B S EN T L IY
-[b̥],B,Hobsbawm,24.5873,1,7,HH AA0 B S B AO1 M
-[b̥],B,Babson,25.0767,4,6,B AE1 B S AH0 N
-[d̥],D,Bradstreet,68.4511,3,9,B R AE1 D S T R IY2 T
+[b̥],B,abscond,12.0428,3,7,AE0 B S K AA1 N D
+[b̥],B,lobster,171.4438,6,6,L AA1 B S T ER0
+[b̥],B,Robson,117.3463,9,6,R AA1 B S AH0 N
+[b̥],B,Gebhard,14.5907,1,6,G EH1 B HH ER0 D
+[d̥],D,spreadsheet,122.9612,2,8,S P R EH1 D SH IY2 T
+[d̥],D,headstones,19.9986,3,8,HH EH1 D S T OW2 N Z
 [d̥],D,bloodshed,164.8819,1,7,B L AH1 D SH EH2 D
-[d̥],D,Godhead,85.1586,1,6,G AA1 D HH EH2 D
-[d̥],D,redhead,34.5123,5,6,R EH1 D HH EH2 D
-[d̥],D,ad,21.5374,2,5,AE1 D HH AA1 K
+[d̥],D,Redford,38.633,13,6,R EH1 D F ER0 D
+[d̥],D,Goodhue,27.522,1,6,G UH1 D HH Y UW2
 [g̥],G,Flagstaff,56.7759,3,8,F L AE1 G S T AE2 F
 [g̥],G,Leghorns,33.4955,3,8,L EH1 G HH AO0 R N Z
 [g̥],G,Siegfried,103.8658,2,7,S IY1 G F R IY2 D
 [g̥],G,flagship,87.9159,2,7,F L AE1 G SH IH2 P
 [g̥],G,Leghorn,77.4512,3,7,L EH1 G HH AO0 R N
-[b̥],FILLER,advance,x,x,x,AH0 D V AE1 N S
-[b̥],FILLER,advanced,x,x,x,AH0 D V AE1 N S T
-[b̥],FILLER,benchmark,x,x,x,B EH1 N CH M AA2 R K
-[b̥],FILLER,chancellor,x,x,x,CH AE1 N S L ER0
-[b̥],FILLER,commence,x,x,x,K AH0 M EH1 N S
-[d̥],FILLER,concept,x,x,x,K AA1 N S EH0 P T
-[d̥],FILLER,consent,x,x,x,K AH0 N S EH1 N T
-[d̥],FILLER,defence,x,x,x,D IH0 F EH1 N S
-[d̥],FILLER,defense,x,x,x,D IH0 F EH1 N S
-[d̥],FILLER,densely,x,x,x,D EH1 N S L IY0
-[g̥],FILLER,enhance,x,x,x,EH0 N HH AE1 N S
-[g̥],FILLER,ensure,x,x,x,EH0 N SH UH1 R
-[g̥],FILLER,fancy,x,x,x,F AE1 N S IY0
-[g̥],FILLER,finance,x,x,x,F AH0 N AE1 N S
-[g̥],FILLER,franchise,x,x,x,F R AE1 N CH AY2 Z
-[b̚],B,Web,1811.3847,35,3,W EH1 B
-[b̚],B,Bob,1314.512,66,3,B AA1 B
-[b̚],B,Lab,1009.9475,53,3,L AE1 B
-[b̚],B,Rob,374.6154,58,3,R AA1 B
-[b̚],B,gab,16.5135,58,3,G AE1 B
-[d̚],D,fed,2171.1898,59,3,F EH1 D
-[d̚],D,Med,1929.1106,62,3,M EH1 D
-[d̚],D,Chad,210.0353,45,3,CH AE1 D
-[d̚],D,nude,188.9562,56,3,N UW1 D
-[d̚],D,ped,29.1432,54,3,P EH D
+[b̥],FILLER,bookshelf,x,x,x,B UH1 K SH EH2 L F
+[b̥],FILLER,elsewhere,x,x,x,EH1 L S W EH2 R
+[b̥],FILLER,fulfill,x,x,x,F UH0 L F IH1 L
+[b̥],FILLER,healthcare,x,x,x,HH EH1 L TH K EH2 R
+[b̥],FILLER,healthy,x,x,x,HH EH1 L TH IY0
+[d̥],FILLER,herself,x,x,x,HH ER0 S EH1 L F
+[d̥],FILLER,himself,x,x,x,HH IH0 M S EH1 L F
+[d̥],FILLER,itself,x,x,x,IH2 T S EH1 L F
+[d̥],FILLER,myself,x,x,x,M AY2 S EH1 L F
+[d̥],FILLER,oneself,x,x,x,W AH2 N S EH1 L F
+[g̥],FILLER,salsa,x,x,x,S AA1 L S AH0
+[g̥],FILLER,selfish,x,x,x,S EH1 L F IH0 SH
+[g̥],FILLER,selfless,x,x,x,S EH1 L F L AH0 S
+[g̥],FILLER,wealthy,x,x,x,W EH1 L TH IY0
+[g̥],FILLER,welfare,x,x,x,W EH1 L F EH2 R
+[b̚],B,tube,3884.1449,39,3,T UW1 B
+[b̚],B,cab,426.5736,60,3,K AE1 B
+[b̚],B,Cobb,281.4198,63,3,K AA1 B
+[b̚],B,lube,34.3874,50,3,L UW1 B
+[b̚],B,Leib,18.592,63,3,L IY1 B
+[d̚],D,feed,3413.9261,61,3,F IY1 D
+[d̚],D,mad,1121.8925,62,3,M AE1 D
+[d̚],D,Gad,54.2681,69,3,G AE1 D
+[d̚],D,Thad,38.4821,36,3,TH AE1 D
+[d̚],D,Fahd,16.0442,50,3,F AA1 D
+[g̚],G,League,2248.8369,61,3,L IY1 G
 [g̚],G,leg,1985.9716,62,3,L EH1 G
-[g̚],G,bag,1875.3658,55,3,B AE1 G
-[g̚],G,lag,466.1089,61,3,L AE1 G
-[g̚],G,peg,143.6385,47,3,P EH1 G
-[g̚],G,Teague,57.7162,50,3,T IY1 G
+[g̚],G,hog,326.0989,54,3,HH AA1 G
+[g̚],G,sag,67.9756,54,3,S AE1 G
+[g̚],G,nog,16.6456,45,3,N AA G
 [k̚],K,walk,3776.2704,71,3,W AA1 K
-[k̚],K,Jacques,539.4559,36,3,ZH AA1 K
-[k̚],K,shack,101.3315,71,3,SH AE1 K
-[k̚],K,shek,67.8982,57,3,SH EH1 K
+[k̚],K,hook,735.7806,41,3,HH UH1 K
+[k̚],K,knack,75.1007,71,3,N AE1 K
 [k̚],K,Rook,42.5733,41,3,R UH1 K
+[k̚],K,geek,15.6239,52,3,G IY1 K
 [p̚],P,map,3648.267,54,3,M AE1 P
 [p̚],P,pop,670.0731,69,3,P AA1 P
 [p̚],P,chop,155.1765,45,3,CH AA1 P
-[p̚],P,sop,33.0128,61,3,S AA1 P
-[p̚],P,Shoup,22.1584,44,3,SH UW1 P
-[t̚],T,wheat,3014.5308,69,3,W IY1 T
+[p̚],P,pap,146.7631,62,3,P AE1 P
+[p̚],P,Shep,25.0307,47,3,SH EH1 P
+[t̚],T,sheet,3289.9956,65,3,SH IY1 T
 [t̚],T,shoot,1077.2135,50,3,SH UW1 T
-[t̚],T,Vet,199.1997,58,3,V EH1 T
 [t̚],T,cheat,183.943,52,3,CH IY1 T
-[t̚],T,Chet,54.2119,47,3,CH EH1 T
-[b̚],FILLER,hair,x,x,x,HH EH1 R
-[b̚],FILLER,half,x,x,x,HH AE1 F
-[b̚],FILLER,ham,x,x,x,HH AE1 M
-[b̚],FILLER,hang,x,x,x,HH AE1 NG
-[b̚],FILLER,has,x,x,x,HH AE1 Z
-[d̚],FILLER,hatch,x,x,x,HH AE1 CH
-[d̚],FILLER,have,x,x,x,HH AE1 V
-[d̚],FILLER,hell,x,x,x,HH IY1 L
-[d̚],FILLER,heal,x,x,x,HH IY1 L
-[d̚],FILLER,hear,x,x,x,HH IY1 R
-[g̚],FILLER,hedge,x,x,x,HH EH1 JH
-[g̚],FILLER,heel,x,x,x,HH IY1 L
-[g̚],FILLER,here,x,x,x,HH IY1 R
-[g̚],FILLER,whom,x,x,x,HH UW1 M
-[g̚],FILLER,whose,x,x,x,HH UW1 Z
-[k̚],FILLER,ham,x,x,x,HH AE M
-[k̚],FILLER,van,x,x,x,V AE1 N
-[k̚],FILLER,vase,x,x,x,V AA1 Z
-[k̚],FILLER,van,x,x,x,V AE N
-[k̚],FILLER,kneel,x,x,x,N IY1 L
-[p̚],FILLER,ness,x,x,x,N EH1 S
-[p̚],FILLER,news,x,x,x,N UW1 Z
-[p̚],FILLER,nice,x,x,x,N IY1 S
-[p̚],FILLER,niece,x,x,x,N IY1 S
-[p̚],FILLER,noon,x,x,x,N UW1 N
-[t̚],FILLER,ness,x,x,x,N EH S
-[t̚],FILLER,nice,x,x,x,N IY S
-[t̚],FILLER,ram,x,x,x,R AE1 M
-[t̚],FILLER,ran,x,x,x,R AE1 N
-[t̚],FILLER,rare,x,x,x,R EH1 R
-[b],B,bar,4785.151,84,3,B AA1 R
+[t̚],T,Jute,78.7239,64,3,Y UW T
+[t̚],T,Vought,15.4607,48,3,V AA T
+[b̚],FILLER,was,x,x,x,W AA1 Z
+[b̚],FILLER,wash,x,x,x,W AA1 SH
+[b̚],FILLER,watch,x,x,x,W AA1 CH
+[b̚],FILLER,well,x,x,x,W IY1 L
+[b̚],FILLER,were,x,x,x,W IY1 R
+[d̚],FILLER,wear,x,x,x,W EH1 R
+[d̚],FILLER,weave,x,x,x,W IY1 V
+[d̚],FILLER,welle,x,x,x,W EH1 L
+[d̚],FILLER,wheel,x,x,x,W IY1 L
+[d̚],FILLER,when,x,x,x,W EH1 N
+[g̚],FILLER,where,x,x,x,W EH1 R
+[g̚],FILLER,won,x,x,x,W AA1 N
+[g̚],FILLER,wool,x,x,x,W UH1 L
+[g̚],FILLER,wool,x,x,x,W UH L
+[g̚],FILLER,chef,x,x,x,SH EH1 F
+[k̚],FILLER,shall,x,x,x,SH AE1 L
+[k̚],FILLER,share,x,x,x,SH EH1 R
+[k̚],FILLER,shell,x,x,x,SH IY1 L
+[k̚],FILLER,shoes,x,x,x,SH UW1 Z
+[k̚],FILLER,sure,x,x,x,SH UH1 R
+[p̚],FILLER,shell,x,x,x,SH EH L
+[p̚],FILLER,lamb,x,x,x,L AE1 M
+[p̚],FILLER,lan,x,x,x,L AE1 N
+[p̚],FILLER,lang,x,x,x,L AE1 NG
+[p̚],FILLER,lar,x,x,x,L AA1 R
+[t̚],FILLER,laugh,x,x,x,L AE1 F
+[t̚],FILLER,leaf,x,x,x,L IY1 F
+[t̚],FILLER,lean,x,x,x,L IY1 N
+[t̚],FILLER,lease,x,x,x,L IY1 S
+[t̚],FILLER,leash,x,x,x,L IY1 SH
+[b],B,bed,7004.2038,69,3,B EH1 D
 [b],B,Bell,1966.6699,75,3,B EH1 L
-[b],B,Booth,460.016,49,3,B UW1 TH
-[b],B,Bess,123.4951,72,3,B EH1 S
-[b],B,Butch,51.9335,22,3,B UH1 CH
-[d],D,debt,5082.9616,77,3,D EH1 T
-[d],D,dam,1294.6663,68,3,D AE1 M
-[d],D,Dad,890.7493,55,3,D AE1 D
+[b],B,bag,1875.3658,55,3,B AE1 G
+[b],B,Beach,1456.9574,57,3,B IY1 CH
+[b],B,BOP,31.1184,57,3,B AA1 P
+[d],D,deep,8440.2453,61,3,D IY1 P
+[d],D,des,3098.4608,70,3,D EH1 S
+[d],D,Das,428.7795,61,3,D AE1 S
+[d],D,doll,283.9657,71,3,D AA1 L
 [d],D,Deb,83.16,51,3,D EH1 B
-[d],D,dab,35.1146,51,3,D AE1 B
-[g],G,gain,5054.8968,60,3,G EH1 N
+[g],G,gas,10352.1628,69,3,G AE1 S
 [g],G,gap,1932.7169,57,3,G AE1 P
-[g],G,GATT,291.722,70,3,G AE1 T
-[g],G,Gaz,91.5335,57,3,G AE1 Z
 [g],G,gab,16.5135,58,3,G AE1 B
-[kʰ],K,cash,4570.6388,64,3,K AE1 SH
+[g],G,goon,15.2526,60,3,G UW1 N
+[g],G,gam,14.7955,66,3,G AE M
+[kʰ],K,King,9544.4354,41,3,K IY NG
 [kʰ],K,catch,2326.1118,55,3,K AE1 CH
 [kʰ],K,Cas,374.6261,82,3,K AE1 S
-[kʰ],K,Coeur,69.725,41,3,K UW1 R
-[kʰ],K,Keefe,46.0157,59,3,K IY1 F
+[kʰ],K,keg,51.2325,47,3,K EH1 G
+[kʰ],K,CAC,38.2539,88,3,K AE1 K
+[pʰ],P,peace,7462.0977,68,3,P IY1 S
 [pʰ],P,pair,3468.7212,58,3,P EH1 R
-[pʰ],P,push,1501.9761,22,3,P UH1 SH
-[pʰ],P,pen,1339.049,71,3,P EH1 N
-[pʰ],P,pan,1044.9894,71,3,P AE1 N
-[pʰ],P,pon,32.6137,78,3,P AA1 N
-[tʰ],T,teeth,2977.9457,45,3,T IY1 TH
-[tʰ],T,tool,2873.6858,56,3,T UW1 L
-[tʰ],T,tear,910.8003,65,3,T EH1 R
-[tʰ],T,Ted,445.2468,60,3,T EH1 D
-[tʰ],T,tack,179.5024,76,3,T AE1 K
-[b],FILLER,hair,x,x,x,HH EH1 R
-[b],FILLER,half,x,x,x,HH AE1 F
-[b],FILLER,ham,x,x,x,HH AE1 M
-[b],FILLER,hang,x,x,x,HH AE1 NG
-[b],FILLER,has,x,x,x,HH AE1 Z
-[d],FILLER,hatch,x,x,x,HH AE1 CH
-[d],FILLER,have,x,x,x,HH AE1 V
-[d],FILLER,hell,x,x,x,HH IY1 L
-[d],FILLER,heal,x,x,x,HH IY1 L
-[d],FILLER,hear,x,x,x,HH IY1 R
-[g],FILLER,hedge,x,x,x,HH EH1 JH
-[g],FILLER,heel,x,x,x,HH IY1 L
-[g],FILLER,here,x,x,x,HH IY1 R
-[g],FILLER,whom,x,x,x,HH UW1 M
-[g],FILLER,whose,x,x,x,HH UW1 Z
-[kʰ],FILLER,ham,x,x,x,HH AE M
-[kʰ],FILLER,van,x,x,x,V AE1 N
-[kʰ],FILLER,vase,x,x,x,V AA1 Z
-[kʰ],FILLER,van,x,x,x,V AE N
-[kʰ],FILLER,kneel,x,x,x,N IY1 L
-[pʰ],FILLER,ness,x,x,x,N EH1 S
-[pʰ],FILLER,news,x,x,x,N UW1 Z
-[pʰ],FILLER,nice,x,x,x,N IY1 S
-[pʰ],FILLER,niece,x,x,x,N IY1 S
-[pʰ],FILLER,noon,x,x,x,N UW1 N
-[tʰ],FILLER,ness,x,x,x,N EH S
-[tʰ],FILLER,nice,x,x,x,N IY S
-[tʰ],FILLER,ram,x,x,x,R AE1 M
-[tʰ],FILLER,ran,x,x,x,R AE1 N
-[tʰ],FILLER,rare,x,x,x,R EH1 R
+[pʰ],P,palm,965.5732,62,3,P AA1 M
+[pʰ],P,pas,283.525,61,3,P AA1 Z
+[pʰ],P,pod,154.1627,64,3,P AA1 D
+[tʰ],T,tell,11966.1654,65,3,T EH1 L
+[tʰ],T,ts,234.7985,82,3,T IY1 Z
+[tʰ],T,TASS,51.5323,58,3,T AE1 S
+[tʰ],T,teat,45.475,77,3,T IY1 T
+[tʰ],T,Touche,36.6992,31,3,T UW1 SH
+[b],FILLER,was,x,x,x,W AA1 Z
+[b],FILLER,wash,x,x,x,W AA1 SH
+[b],FILLER,watch,x,x,x,W AA1 CH
+[b],FILLER,well,x,x,x,W IY1 L
+[b],FILLER,were,x,x,x,W IY1 R
+[d],FILLER,wear,x,x,x,W EH1 R
+[d],FILLER,weave,x,x,x,W IY1 V
+[d],FILLER,welle,x,x,x,W EH1 L
+[d],FILLER,wheel,x,x,x,W IY1 L
+[d],FILLER,when,x,x,x,W EH1 N
+[g],FILLER,where,x,x,x,W EH1 R
+[g],FILLER,won,x,x,x,W AA1 N
+[g],FILLER,wool,x,x,x,W UH1 L
+[g],FILLER,wool,x,x,x,W UH L
+[g],FILLER,chef,x,x,x,SH EH1 F
+[kʰ],FILLER,shall,x,x,x,SH AE1 L
+[kʰ],FILLER,share,x,x,x,SH EH1 R
+[kʰ],FILLER,shell,x,x,x,SH IY1 L
+[kʰ],FILLER,shoes,x,x,x,SH UW1 Z
+[kʰ],FILLER,sure,x,x,x,SH UH1 R
+[pʰ],FILLER,shell,x,x,x,SH EH L
+[pʰ],FILLER,lamb,x,x,x,L AE1 M
+[pʰ],FILLER,lan,x,x,x,L AE1 N
+[pʰ],FILLER,lang,x,x,x,L AE1 NG
+[pʰ],FILLER,lar,x,x,x,L AA1 R
+[tʰ],FILLER,laugh,x,x,x,L AE1 F
+[tʰ],FILLER,leaf,x,x,x,L IY1 F
+[tʰ],FILLER,lean,x,x,x,L IY1 N
+[tʰ],FILLER,lease,x,x,x,L IY1 S
+[tʰ],FILLER,leash,x,x,x,L IY1 SH
 [k],K,scheme,4370.9684,26,4,S K IY1 M
 [k],K,Scott,2805.5263,45,4,S K AA1 T
 [k],K,sketch,1063.0984,15,4,S K EH1 CH
-[k],K,scoop,124.9916,30,4,S K UW1 P
-[k],K,scab,117.5473,17,4,S K AE1 B
-[p],P,speed,6276.6316,33,4,S P IY1 D
-[p],P,spare,1119.3813,26,4,S P EH1 R
+[k],K,scan,578.1326,32,4,S K AE1 N
+[k],K,skis,56.9192,30,4,S K IY1 Z
+[p],P,speak,6875.7131,31,4,S P IY1 K
 [p],P,span,1039.6841,33,4,S P AE1 N
+[p],P,spell,755.0757,30,4,S P EH1 L
+[p],P,sped,171.6535,27,4,S P EH1 D
 [p],P,Spock,34.7293,30,4,S P AA1 K
-[p],P,spoor,12.2938,11,4,S P UH1 R
-[t],T,stood,6522.1008,13,4,S T UH1 D
-[t],T,steep,1024.6168,37,4,S T IY1 P
+[t],T,step,7483.3746,29,4,S T EH1 P
 [t],T,Steve,774.5238,25,4,S T IY1 V
-[t],T,stoop,122.5078,34,4,S T UW1 P
-[t],T,Steph,38.2573,22,4,S T EH1 F
-[k],FILLER,snack,x,x,x,S N AE1 K
-[k],FILLER,snap,x,x,x,S N AE1 P
-[k],FILLER,sneak,x,x,x,S N IY1 K
-[k],FILLER,sneeze,x,x,x,S N IY1 Z
-[k],FILLER,slash,x,x,x,S L AE1 SH
+[t],T,stare,483.643,29,4,S T EH1 R
+[t],T,steed,104.123,42,4,S T IY1 D
+[t],T,stash,30.0343,24,4,S T AE1 SH
+[k],FILLER,suite,x,x,x,S W IY1 T
+[k],FILLER,swan,x,x,x,S W AA1 N
+[k],FILLER,swear,x,x,x,S W EH1 R
+[k],FILLER,sweat,x,x,x,S W EH1 T
+[k],FILLER,sweep,x,x,x,S W IY1 P
+[p],FILLER,sweet,x,x,x,S W IY1 T
+[p],FILLER,swell,x,x,x,S W EH1 L
+[p],FILLER,slash,x,x,x,S L AE1 SH
 [p],FILLER,slam,x,x,x,S L AE1 M
 [p],FILLER,slang,x,x,x,S L AE1 NG
-[p],FILLER,slap,x,x,x,S L AE1 P
-[p],FILLER,sleep,x,x,x,S L IY1 P
-[p],FILLER,sleeve,x,x,x,S L IY1 V
+[t],FILLER,slap,x,x,x,S L AE1 P
+[t],FILLER,sleep,x,x,x,S L IY1 P
+[t],FILLER,sleeve,x,x,x,S L IY1 V
 [t],FILLER,slot,x,x,x,S L AA1 T
-[t],FILLER,suite,x,x,x,S W IY1 T
-[t],FILLER,swan,x,x,x,S W AA1 N
-[t],FILLER,swear,x,x,x,S W EH1 R
-[t],FILLER,sweat,x,x,x,S W EH1 T
+[t],FILLER,snack,x,x,x,S N AE1 K
 VCV_[b],B,obey,877.2253,30,3,OW0 B EY1
 VCV_[b],B,Abbey,512.1148,56,3,AE1 B IY0
-VCV_[b],B,Abu,360.4471,15,3,AE1 B UW0
-VCV_[b],B,Abe,177.0452,13,3,AA B EY
+VCV_[b],B,aber,55.6651,42,3,EY1 B ER0
+VCV_[b],B,Aber,23.7274,39,3,AE B ER
 VCV_[b],B,obi,12.6355,43,3,OW B IY
-VCV_[d],D,Id,1832.1211,39,3,AY1 D IY1
-VCV_[d],D,Audi,34.7346,35,3,AO1 D IY0
-VCV_[d],D,Audi,34.7346,28,3,AW1 D IY0
-VCV_[d],D,Eder,21.6606,50,3,EH1 D ER0
-VCV_[d],D,Adah,13.6851,9,3,AE1 D AA0
+VCV_[d],D,odor,498.771,41,3,OW1 D ER0
+VCV_[d],D,Eddie,346.2473,57,3,EH1 D IY0
+VCV_[d],D,Ida,287.5664,38,3,AY1 D AH0
+VCV_[d],D,Ada,250.9659,42,3,EY1 D AH0
+VCV_[d],D,ODA,99.2872,44,3,OW1 D AH0
 VCV_[g],G,eager,1076.2294,31,3,IY1 G ER0
-VCV_[g],G,Ag,493.421,35,3,EY1 G IY1
-VCV_[g],G,eg,271.4905,26,3,IY2 G IY1
-VCV_[g],G,Auger,80.6909,18,3,AO1 G ER0
+VCV_[g],G,agar,305.7136,40,3,EY1 G ER0
+VCV_[g],G,Aga,41.163,29,3,AA1 G AH0
+VCV_[g],G,Aggie,30.4317,41,3,AE1 G IY0
 VCV_[g],G,Egger,16.2423,48,3,EH1 G ER0
-VCV_[kʰ],K,okay,931.0491,31,3,OW2 K EY1
 VCV_[kʰ],K,OK,818.6998,24,3,AH K EY
-VCV_[kʰ],K,ochre,65.1561,48,3,OW1 K ER0
-VCV_[kʰ],K,ACA,62.6244,41,3,AE1 K AH0
-VCV_[kʰ],K,ek,55.109,17,3,IY1 K EY1
-VCV_[pʰ],P,IP,543.3587,42,3,IH1 P IY1
-VCV_[pʰ],P,IP,543.3587,21,3,AY2 P IY2
-VCV_[pʰ],P,ap,463.8817,43,3,EY2 P IY1
+VCV_[kʰ],K,echo,607.8847,33,3,EH1 K OW0
+VCV_[kʰ],K,Oka,29.4977,40,3,OW1 K AH0
+VCV_[kʰ],K,Ecker,15.0667,62,3,EH1 K ER0
+VCV_[kʰ],K,Oki,13.3531,52,3,OW1 K IY0
+VCV_[pʰ],P,I.P.,543.3587,21,3,AY2 P IY2
+VCV_[pʰ],P,AP,463.8817,43,3,EY2 P IY1
 VCV_[pʰ],P,Opie,29.1585,33,3,OW1 P IY2
 VCV_[pʰ],P,aper,17.8246,33,3,EY P ER
+VCV_[pʰ],P,oppo,14.664,21,3,AA P OW
 VCV_[tʰ],T,eighty,1214.4881,53,3,EY1 T IY0
-VCV_[tʰ],T,Otto,546.6208,30,3,AA1 T OW2
 VCV_[tʰ],T,Ito,103.1329,37,3,IY1 T OW0
-VCV_[tʰ],T,outta,36.3371,21,3,AW1 T AH0
-VCV_[tʰ],T,outta,36.3371,18,3,UW1 T AH0
-VCV_[b],FILLER,av,x,x,x,EY2 V IY1
-VCV_[b],FILLER,ave,x,x,x,AA1 V EY2
-VCV_[b],FILLER,ever,x,x,x,EH1 V ER0
-VCV_[b],FILLER,over,x,x,x,OW1 V ER0
-VCV_[b],FILLER,ave,x,x,x,EY V IY
-VCV_[d],FILLER,annoy,x,x,x,AH0 N OY1
-VCV_[d],FILLER,any,x,x,x,EH1 N IY0
-VCV_[d],FILLER,enter,x,x,x,EH1 N ER0
-VCV_[d],FILLER,honor,x,x,x,AA1 N ER0
-VCV_[d],FILLER,inner,x,x,x,IH1 N ER0
-VCV_[g],FILLER,owner,x,x,x,OW1 N ER0
-VCV_[g],FILLER,arrow,x,x,x,AE1 R OW0
-VCV_[g],FILLER,era,x,x,x,EH1 R AH0
-VCV_[g],FILLER,error,x,x,x,EH1 R ER0
-VCV_[g],FILLER,ori,x,x,x,AO1 R IY0
-VCV_[kʰ],FILLER,ager,x,x,x,EY1 JH ER0
-VCV_[kʰ],FILLER,easy,x,x,x,IY1 Z IY0
-VCV_[kʰ],FILLER,author,x,x,x,AO1 TH ER0
-VCV_[kʰ],FILLER,allow,x,x,x,AH0 L AW1
-VCV_[kʰ],FILLER,ally,x,x,x,AE1 L AY0
-VCV_[pʰ],FILLER,early,x,x,x,ER1 L IY0
-VCV_[pʰ],FILLER,oily,x,x,x,OY1 L IY0
-VCV_[pʰ],FILLER,olley,x,x,x,AA1 L IY0
-VCV_[pʰ],FILLER,ally,x,x,x,AE L IY
-VCV_[pʰ],FILLER,essay,x,x,x,EH0 S EY1
-VCV_[tʰ],FILLER,icy,x,x,x,AY1 S IY0
-VCV_[tʰ],FILLER,an,x,x,x,AH S AH
-VCV_[tʰ],FILLER,issue,x,x,x,IH1 SH UW0
-VCV_[tʰ],FILLER,usher,x,x,x,AH1 SH ER0
-VCV_[tʰ],FILLER,away,x,x,x,AH0 W EY1
+VCV_[tʰ],T,eater,75.6168,42,3,IY1 T ER0
+VCV_[tʰ],T,eta,46.0262,35,3,EY T AH
+VCV_[tʰ],T,ater,41.9754,46,3,EY1 T ER0
+VCV_[b],FILLER,away,x,x,x,AH0 W EY1
+VCV_[b],FILLER,issue,x,x,x,IH1 SH UW0
+VCV_[b],FILLER,usher,x,x,x,AH1 SH ER0
+VCV_[b],FILLER,allow,x,x,x,AH0 L AW1
+VCV_[b],FILLER,ally,x,x,x,AE1 L AY0
+VCV_[d],FILLER,early,x,x,x,ER1 L IY0
+VCV_[d],FILLER,oily,x,x,x,OY1 L IY0
+VCV_[d],FILLER,olley,x,x,x,AA1 L IY0
+VCV_[d],FILLER,ally,x,x,x,AE L IY
+VCV_[d],FILLER,either,x,x,x,IY1 DH ER0
+VCV_[g],FILLER,other,x,x,x,AH1 DH ER0
+VCV_[g],FILLER,essay,x,x,x,EH0 S EY1
+VCV_[g],FILLER,icy,x,x,x,AY1 S IY0
+VCV_[g],FILLER,an,x,x,x,AH S AH
+VCV_[g],FILLER,ager,x,x,x,EY1 JH ER0
+VCV_[kʰ],FILLER,offer,x,x,x,AO1 F ER0
+VCV_[kʰ],FILLER,arrow,x,x,x,AE1 R OW0
+VCV_[kʰ],FILLER,era,x,x,x,EH1 R AH0
+VCV_[kʰ],FILLER,error,x,x,x,EH1 R ER0
+VCV_[kʰ],FILLER,ori,x,x,x,AO1 R IY0
+VCV_[pʰ],FILLER,author,x,x,x,AO1 TH ER0
+VCV_[pʰ],FILLER,av,x,x,x,EY2 V IY1
+VCV_[pʰ],FILLER,ave,x,x,x,AA1 V EY2
+VCV_[pʰ],FILLER,ever,x,x,x,EH1 V ER0
+VCV_[pʰ],FILLER,over,x,x,x,OW1 V ER0
+VCV_[tʰ],FILLER,ave,x,x,x,EY V IY
+VCV_[tʰ],FILLER,easy,x,x,x,IY1 Z IY0
+VCV_[tʰ],FILLER,annoy,x,x,x,AH0 N OY1
+VCV_[tʰ],FILLER,any,x,x,x,EH1 N IY0
+VCV_[tʰ],FILLER,enter,x,x,x,EH1 N ER0

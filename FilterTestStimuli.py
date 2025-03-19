@@ -217,7 +217,7 @@ class FilterTestStimuli:
         Selects stimuli using both Simulated Annealing and Beam Search,
         compares their performance (both in quality and time), and returns the best solution.
         """
-        iterations = 100_000  # local variable to set iterations for both algorithms
+        iterations = 500_000  # local variable to set iterations for both algorithms
         candidate_generators = self.get_candidate_generators(n)
 
         # Measure time for Simulated Annealing
@@ -450,11 +450,11 @@ import multiprocessing
 def main():
     """Main function to execute all processing steps in parallel"""
     processes = [
-        multiprocessing.Process(target=process_plosive_finals),
-        multiprocessing.Process(target=process_devoiced_plosive_finals),
-        multiprocessing.Process(target=process_plosive_initials),
+        # multiprocessing.Process(target=process_plosive_finals),
+        # multiprocessing.Process(target=process_devoiced_plosive_finals),
+        # multiprocessing.Process(target=process_plosive_initials),
         multiprocessing.Process(target=process_vcv_plosive_finals),
-        multiprocessing.Process(target=process_unaspirated_unvoiced_plosive_initials)
+        # multiprocessing.Process(target=process_unaspirated_unvoiced_plosive_initials)
     ]
 
     # Start all processes

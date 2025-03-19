@@ -90,12 +90,12 @@ Each dataset contains a markdown table summarizing:
 ### **VCV Plosive Finals**
 | Tested Allophone   | Tested Phoneme   |   Average Probability *100 Million |   C.V. Probability *100 Million |   Average Density |   C.V. Density |
 |--------------------|------------------|------------------------------------|---------------------------------|-------------------|----------------|
-| VCV_[b]            | B                |                             393.1  |                            0.74 |              30.6 |           0.52 |
-| VCV_[d]            | D                |                             393.07 |                            1.83 |              30.2 |           0.46 |
-| VCV_[g]            | G                |                             392.82 |                            0.97 |              29.2 |           0.34 |
-| VCV_[kʰ]           | K                |                             395.31 |                            1    |              31.4 |           0.34 |
+| VCV_[b]            | B                |                             296.27 |                            1.17 |              42   |           0.2  |
+| VCV_[d]            | D                |                             296.57 |                            0.44 |              44.4 |           0.15 |
+| VCV_[g]            | G                |                             293.96 |                            1.38 |              37.8 |           0.18 |
+| VCV_[kʰ]           | K                |                             296.9  |                            1.17 |              42.2 |           0.32 |
 | VCV_[pʰ]           | P                |                             213.78 |                            1.11 |              30.2 |           0.28 |
-| VCV_[tʰ]           | T                |                             392.56 |                            1.14 |              32.4 |           0.21 |
+| VCV_[tʰ]           | T                |                             296.25 |                            1.55 |              42.6 |           0.15 |
 
 ✅ **File Saved**: `final/vcvPlosiveFinals.csv`
 
